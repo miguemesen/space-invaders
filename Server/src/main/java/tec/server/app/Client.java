@@ -18,14 +18,12 @@ public class Client {
             JSONObject obj = new JSONObject();
             obj.put("command", "newGame");
             obj.put("gameId",1);
+
             // writing to server
-            PrintWriter out = new PrintWriter(
-                    socket.getOutputStream(), true);
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
             // reading from server
-            BufferedReader in
-                    = new BufferedReader(new InputStreamReader(
-                    socket.getInputStream()));
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
             // object of scanner class
             Scanner sc = new Scanner(System.in);

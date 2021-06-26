@@ -28,6 +28,10 @@ public class Game {
         this.player = player;
     }
 
+    public ClientHandler getPlayer() {
+        return player;
+    }
+
     public Integer getGameId() {
         return gameId;
     }
@@ -41,7 +45,13 @@ public class Game {
     public void filterCommand(String command) throws ParseException, IOException {
         JSONObject commandJSON = (JSONObject) jsonParser.parse(command);
 
-
     }
 
+    public void removeObserver(ClientHandler clientHandler) {
+        this.observers.remove(clientHandler);
+    }
+
+    public void gameOver() {
+
+    }
 }

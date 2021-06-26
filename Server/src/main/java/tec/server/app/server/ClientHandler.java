@@ -22,6 +22,7 @@ public class ClientHandler implements Runnable{
     public static List<Game> games;
     public static boolean game1_disponible = false;
     public static boolean game2_disponible = false;
+    private boolean isActive = true;
 
 
     // Constructor
@@ -91,9 +92,19 @@ public class ClientHandler implements Runnable{
 
         try {
 
-            String response;
-            while ((response = in.readLine()) != null) {
+            while (isActive){
+                String response = in.readLine();
 
+                if (response == null){
+                    if (game.getPlayer() == this){
+                        this.endExecution();
+                        break;
+                    } else {
+                        this.game.removeObserver(this);
+                        this.clientSocket.close();
+                        break;
+                    }
+                }
 
                 JSONObject responseJson = (JSONObject) (this.jsonParser.parse(response));
                 String command = responseJson.get("command").toString();
@@ -105,6 +116,7 @@ public class ClientHandler implements Runnable{
                     game.filterCommand(response);
                 }
             }
+
         }
         catch (IOException | ParseException e) {
             e.printStackTrace();
@@ -122,6 +134,35 @@ public class ClientHandler implements Runnable{
             catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    private void endExecution() {
+        if (game.getPlayer() == this){
+            game.gameOver();
+            freeGame(game.getGameId());
+            games.remove(this.game);
+            this.isActive = false;
+        }
+        try {
+            this.clientSocket.close();
+            this.in.close();
+            this.out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void freeGame(Integer gameId) {
+        if (gameId == 1){
+            game1_disponible = false;
+            games.remove(game);
+        }
+        else if (gameId == 2){
+            game2_disponible = false;
+            games.remove(game);
+        } else {
+            System.out.println("Id invlaido");
         }
     }
 }
