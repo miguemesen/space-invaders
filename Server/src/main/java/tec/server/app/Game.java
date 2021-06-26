@@ -28,17 +28,20 @@ public class Game {
         this.player = player;
     }
 
+    public Integer getGameId() {
+        return gameId;
+    }
+
+    public void iniciarJuego() throws IOException {
+        player.send(Serializer.startGame(gameId));
+    }
+
 
 
     public void filterCommand(String command) throws ParseException, IOException {
         JSONObject commandJSON = (JSONObject) jsonParser.parse(command);
 
-        if (commandJSON.get("command").equals("moverCanon")){
 
-        }
-        if (commandJSON.get("command").equals("adios")){
-
-        }
     }
 
 }

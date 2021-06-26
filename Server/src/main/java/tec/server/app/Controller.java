@@ -4,6 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import tec.server.app.server.ClientHandler;
+
+import java.io.IOException;
+import java.util.Objects;
 
 public class Controller {
     public TextField insertarEnemigoPosicion;
@@ -27,12 +31,12 @@ public class Controller {
 
     }
 
-    public void iniciarJuego(ActionEvent actionEvent) {
+    public void iniciarJuego(ActionEvent actionEvent) throws IOException {
         if (checkBoxJuegoUno.isSelected()){
-            Serializer.iniciarJuego(1);
+            Objects.requireNonNull(ClientHandler.getGameById(1)).iniciarJuego();
         }
         else if (checkBoxJuegoDos.isSelected()){
-            Serializer.iniciarJuego(2);
+            Objects.requireNonNull(ClientHandler.getGameById(2)).iniciarJuego();
         } else {
             System.out.println("No se selecciona el juego que quiere manejar");
         }

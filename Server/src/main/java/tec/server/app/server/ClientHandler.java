@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
-import tec.server.app.Client;
 import tec.server.app.Game;
 import tec.server.app.Serializer;
 
@@ -37,8 +36,16 @@ public class ClientHandler implements Runnable{
 
     }
 
+    public static Game getGameById(Integer gameId){
+        for (Game game : games){
+            if (gameId == game.getGameId())
+                return game;
+
+        }
+        return null;
+    }
+
     public void newGameHandler(JSONObject responseJson) throws IOException {
-        this.out.println("Se crea un nuevo juego");
 
         if (totalGames() < MAX_GAMES){
 
@@ -46,10 +53,11 @@ public class ClientHandler implements Runnable{
 
             if (game_id == 1){
                 if (!game1_disponible){ // verifica si alguien lo esta jugando, si no lo estan jugando crea un juego nuevo
+                    send(Serializer.gameAccepted(game_id));
                     createNewGame(game_id);
                     game1_disponible = true;
                 } else { // si ya estan jugando el juego le manda un rechazo al cliente
-                    send(Serializer.gameRefused(game_id));
+                    send(Serializer.gameRejected(game_id));
                 }
             }
         }
