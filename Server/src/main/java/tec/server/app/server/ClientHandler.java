@@ -51,9 +51,9 @@ public class ClientHandler implements Runnable{
 
     public void newGameHandler(JSONObject responseJson) throws IOException {
 
-        if (totalGames() < MAX_GAMES){
+        Integer game_id = Integer.parseInt(responseJson.get("gameId").toString());
 
-            Integer game_id = Integer.parseInt(responseJson.get("gameId").toString());
+        if (totalGames() < MAX_GAMES){
 
             if (game_id == 1){
                 if (!game1_disponible){ // verifica si alguien lo esta jugando, si no lo estan jugando crea un juego nuevo
@@ -64,6 +64,18 @@ public class ClientHandler implements Runnable{
                     send(Serializer.gameRejected(game_id));
                 }
             }
+            if (game_id == 2){
+                if (!game2_disponible){
+                    send(Serializer.gameAccepted(game_id));
+                    createNewGame(game_id);
+                    game2_disponible = true;
+                } else {
+                    send(Serializer.gameRejected(game_id));
+                }
+            }
+
+        } else {
+            send(Serializer.gameRejected(game_id));
         }
     }
 
