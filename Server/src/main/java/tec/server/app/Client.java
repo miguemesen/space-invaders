@@ -17,6 +17,7 @@ public class Client {
 
             JSONObject obj = new JSONObject();
             obj.put("command", "newGame");
+            obj.put("gameId",1);
             // writing to server
             PrintWriter out = new PrintWriter(
                     socket.getOutputStream(), true);

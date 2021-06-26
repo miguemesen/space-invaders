@@ -2,6 +2,8 @@ package tec.server.app.server;
 
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.json.simple.JSONObject;
@@ -24,6 +26,7 @@ public class ClientHandler implements Runnable{
 
     // Constructor
     public ClientHandler(Socket client) throws IOException {
+        games = Collections.synchronizedList(new ArrayList<>());
         this.clientSocket = client;
         this.out = new PrintWriter(client.getOutputStream(),true);
         this.in = new BufferedReader(new InputStreamReader(client.getInputStream()));
