@@ -1,5 +1,7 @@
 package tec.server.app;
 
+import org.json.simple.JSONObject;
+
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -13,6 +15,8 @@ public class Client {
         // number
         try (Socket socket = new Socket("localhost", 1234)) {
 
+            JSONObject obj = new JSONObject();
+            obj.put("command", "newGame");
             // writing to server
             PrintWriter out = new PrintWriter(
                     socket.getOutputStream(), true);
@@ -32,7 +36,7 @@ public class Client {
                 line = sc.nextLine();
 
                 // sending the user input to server
-                out.println(line);
+                out.println(obj.toJSONString());
                 out.flush();
 
                 // displaying server reply
