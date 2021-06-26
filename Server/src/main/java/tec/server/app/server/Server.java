@@ -6,49 +6,42 @@ import java.io.*;
 import java.net.*;
 
 
-public class Server {
+public class Server extends Thread{
 
-    public static void main(String[] args) {
-        ServerSocket server = null;
+    private static ServerSocket server;
+    private static boolean running = true;
+    public static Server serverInstance;
 
+    public Server(Integer port) {
         try {
-
-
-            // server is listening on port 1234
-            server = new ServerSocket(1234);
-            server.setReuseAddress(true);
-
-            // running infinite loop for getting
-            // client request
-            while (true) {
-
-                // socket object to receive incoming client
-                // requests
-                Socket client = server.accept();
-
-                // Displaying that new client is connected
-                // to server
-                System.out.println("New client connected"
-                        + client.getInetAddress()
-                        .getHostAddress());
-
-                // create a new thread object
-                ClientHandler clientSock
-                        = new ClientHandler(client);
-
-                // This thread will handle the client
-                // separately
-                new Thread(clientSock).start();
-            }
+            server = new ServerSocket(port);
+            System.out.println("Init Server");
+            this.start();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (server != null) {
-                try {
-                    server.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+        }
+    }
+
+    public static Server getInstance(Integer port){
+        if (serverInstance == null){
+            serverInstance = new Server(port);
+        }
+        return serverInstance;
+    }
+
+    @Override
+    public void run(){
+        while (running){
+            try {
+                Socket client = server.accept();
+
+                System.out.printf("Client conneted %s \n", client.getInetAddress());
+
+                ClientHandler newClient = new ClientHandler(client);
+
+                new Thread(newClient).start();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }

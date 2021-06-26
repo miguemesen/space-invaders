@@ -28,22 +28,16 @@ public class Game {
         this.player = player;
     }
 
-    public void saludar() throws IOException {
-        player.send("Estoy mandando un saludo");
-    }
 
-    public void despedida() throws IOException {
-        player.send("Estoy despidiendo");
-    }
 
     public void filterCommand(String command) throws ParseException, IOException {
         JSONObject commandJSON = (JSONObject) jsonParser.parse(command);
 
-        if (commandJSON.get("command").equals("hola")){
-            this.saludar();
+        if (commandJSON.get("command").equals("moverCanon")){
+
         }
         if (commandJSON.get("command").equals("adios")){
-            this.despedida();
+
         }
     }
 

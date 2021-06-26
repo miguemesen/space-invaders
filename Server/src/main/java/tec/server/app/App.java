@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import tec.server.app.server.Server;
 
 /**
  * JavaFX App
@@ -24,6 +25,8 @@ public class App extends Application {
             Scene scene = new Scene(root, 905, 504);
             gameStage.setScene(scene);
             gameStage.show();
+
+            Server server = Server.getInstance(1234);
 
         } catch (Exception e) {
             e.printStackTrace();

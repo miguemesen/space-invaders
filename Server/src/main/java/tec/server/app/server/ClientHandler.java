@@ -6,11 +6,13 @@ import java.util.List;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
+import tec.server.app.Client;
 import tec.server.app.Game;
 import tec.server.app.Serializer;
 
 public class ClientHandler implements Runnable{
 
+    private final Integer MAX_GAMES = 2;
     private final Socket clientSocket;
     private JSONParser jsonParser;
     private PrintWriter out;
@@ -38,7 +40,7 @@ public class ClientHandler implements Runnable{
     public void newGameHandler(JSONObject responseJson) throws IOException {
         this.out.println("Se crea un nuevo juego");
 
-        if (ClientHandler.games.size() < 2){
+        if (totalGames() < MAX_GAMES){
 
             Integer game_id = Integer.parseInt(responseJson.get("gameId").toString());
 
@@ -53,10 +55,23 @@ public class ClientHandler implements Runnable{
         }
     }
 
+
+    /**
+     * Crea un nuevo juego con el cliente actual y el id ingresado por el mismo
+     * @param game_id id del juego que desea iniciar
+     */
     private void createNewGame(Integer game_id) {
         Game game = new Game(game_id,this);
         ClientHandler.games.add(game);
         this.game = game;
+    }
+
+    /**
+     * Devuelve el total de juegos existentes
+     * @return
+     */
+    private Integer totalGames(){
+        return ClientHandler.games.size();
     }
 
 
