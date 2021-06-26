@@ -14,4 +14,11 @@ public class Serializer {
         return jsonObject.toJSONString();
     }
 
+    public static String iniciarJuego(Integer gameId){
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("command","startGame");
+        jsonObject.put("gameId",gameId);
+        return jsonObject.toJSONString();
+    }
+
 }

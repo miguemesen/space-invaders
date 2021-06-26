@@ -1,5 +1,6 @@
 package tec.server.app;
 
+import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
@@ -26,4 +27,37 @@ public class Controller {
 
     }
 
+    public void iniciarJuego(ActionEvent actionEvent) {
+        if (checkBoxJuegoUno.isSelected()){
+            Serializer.iniciarJuego(1);
+        }
+        else if (checkBoxJuegoDos.isSelected()){
+            Serializer.iniciarJuego(2);
+        } else {
+            System.out.println("No se selecciona el juego que quiere manejar");
+        }
+    }
+
+    public void isCheckedJuegoUno(ActionEvent actionEvent) {
+        checkBoxJuegoDos.setSelected(false);
+    }
+
+    public void isCheckedJuegoDos(ActionEvent actionEvent) {
+        checkBoxJuegoUno.setSelected(false);
+    }
+
+    public void isCheckedPulpo(ActionEvent actionEvent) {
+        tipoEnemigoCalamar.setSelected(false);
+        tipoEnemigoCangrejo.setSelected(false);
+    }
+
+    public void isCheckedCalamar(ActionEvent actionEvent) {
+        tipoEnemigoCangrejo.setSelected(false);
+        tipoEnemigoPulpo.setSelected(false);
+    }
+
+    public void isCheckedCangrejo(ActionEvent actionEvent) {
+        tipoEnemigoPulpo.setSelected(false);
+        tipoEnemigoCalamar.setSelected(false);
+    }
 }

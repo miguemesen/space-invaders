@@ -243,31 +243,36 @@
                </font>
             </Label>
             <Button fx:id="insertarEnemigoAleatorio" layoutX="36.0" layoutY="305.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Insertar" />
-            <CheckBox fx:id="checkBoxJuegoUno" layoutX="401.0" layoutY="419.0" mnemonicParsing="false" text="Juego Uno">
+            <CheckBox fx:id="checkBoxJuegoUno" layoutX="463.0" layoutY="390.0" mnemonicParsing="false" text="Juego Uno" onAction="#isCheckedJuegoUno">
                <font>
                   <Font size="22.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="checkBoxJuegoDos" layoutX="580.0" layoutY="419.0" mnemonicParsing="false" text="Juego Dos">
+            <CheckBox fx:id="checkBoxJuegoDos" layoutX="642.0" layoutY="390.0" mnemonicParsing="false" text="Juego Dos" onAction="#isCheckedJuegoDos">
                <font>
                   <Font size="22.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="tipoEnemigoPulpo" layoutX="36.0" layoutY="142.0" mnemonicParsing="false" text="Pulpo">
+            <CheckBox fx:id="tipoEnemigoPulpo" layoutX="36.0" layoutY="142.0" mnemonicParsing="false" text="Pulpo" onAction="#isCheckedPulpo">
                <font>
                   <Font size="16.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="tipoEnemigoCalamar" layoutX="115.0" layoutY="142.0" mnemonicParsing="false" text="Calamar">
+            <CheckBox fx:id="tipoEnemigoCalamar" layoutX="115.0" layoutY="142.0" mnemonicParsing="false" text="Calamar" onAction="#isCheckedCalamar">
                <font>
                   <Font size="16.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="tipoEnemigoCangrejo" layoutX="214.0" layoutY="142.0" mnemonicParsing="false" text="Cangrejo">
+            <CheckBox fx:id="tipoEnemigoCangrejo" layoutX="214.0" layoutY="142.0" mnemonicParsing="false" text="Cangrejo" onAction="#isCheckedCangrejo">
                <font>
                   <Font size="16.0" />
                </font>
             </CheckBox>
+            <Button layoutX="559.0" layoutY="443.0" mnemonicParsing="false" text="Iniciar Juego" onAction="#iniciarJuego">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
    </children>
