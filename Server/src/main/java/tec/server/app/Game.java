@@ -103,6 +103,9 @@ public class Game {
 //        if (commandJSON.get("command").equals("putBulletEnemy") || commandJSON.get("command").equals("putBulletPlayer"))
 //            this.putBullet(commandJSON);
 
+        if (commandJSON.get("command").equals("killSpacecraft"))
+            this.killSpacecraft(commandJSON);
+
         if (commandJSON.get("command").equals("killEnemy"))
             this.killEnemy(commandJSON);
 
@@ -114,6 +117,11 @@ public class Game {
 
 //        if (commandJSON.get("command").equals("moveSpacecraft"))
 //            this.moveSpacecraft(commandJSON);
+    }
+
+    private void killSpacecraft(JSONObject commandJSON) throws IOException {
+        this.canon.aumentarPuntaje(Controller.getSpacecraftPoints());
+        sendClientes(Serializer.updateScore(this.gameId,this.canon.getPuntaje()));
     }
 
     private void win(JSONObject commandJSON) throws IOException {
