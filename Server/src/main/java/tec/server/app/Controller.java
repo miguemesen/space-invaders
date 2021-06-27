@@ -51,7 +51,7 @@ public class Controller {
                 list.add(FactoryEnemigo.getEnemigo(tipoEnemigo,i));
             }
         }
-        if (checkBoxFilaUno.isSelected()){
+        if (checkBoxFilaTres.isSelected()){
             for (int i=21; i <= 30; i++){
                 list.add(FactoryEnemigo.getEnemigo(tipoEnemigo,i));
             }
