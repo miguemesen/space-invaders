@@ -30,6 +30,12 @@ public class Controller {
     public CheckBox tipoEnemigoCalamar;
     public CheckBox tipoEnemigoCangrejo;
     public String tipoEnemigo;
+    public Boolean isRandomPoint = false;
+    public static Integer spacecraftPoints;
+
+    public static Integer getSpacecraftPoints() {
+        return spacecraftPoints;
+    }
 
     public Boolean isEnemySelected(){
         return tipoEnemigoCalamar.isSelected() || tipoEnemigoPulpo.isSelected() || tipoEnemigoCangrejo.isSelected();
@@ -39,6 +45,10 @@ public class Controller {
         return checkBoxFilaUno.isSelected() || checkBoxFilaDos.isSelected() || checkBoxFilaTres.isSelected();
     }
 
+    /**
+     * Crea y devuelve una lista de los enemigos que se quieren insertar en la pantalla
+     * @return
+     */
     public List<Enemigo> getEnemyList(){
         List<Enemigo> list = new ArrayList<>();
         if (checkBoxFilaUno.isSelected()){
@@ -54,6 +64,26 @@ public class Controller {
         if (checkBoxFilaTres.isSelected()){
             for (int i=21; i <= 30; i++){
                 list.add(FactoryEnemigo.getEnemigo(tipoEnemigo,i));
+            }
+        }
+        return list;
+    }
+
+    public List<Enemigo> getEnemyDeleteList(){
+        List<Enemigo> list = new ArrayList<>();
+        if (checkBoxFilaUno.isSelected() || todosEliminar.isSelected()){
+            for (int i=1; i <= 10; i++){
+                list.add(FactoryEnemigo.getEnemigo("default",i));
+            }
+        }
+        if (checkBoxFilaDos.isSelected() || todosEliminar.isSelected()){
+            for (int i=11; i <= 20; i++){
+                list.add(FactoryEnemigo.getEnemigo("default",i));
+            }
+        }
+        if (checkBoxFilaTres.isSelected() || todosEliminar.isSelected()){
+            for (int i=21; i <= 30; i++){
+                list.add(FactoryEnemigo.getEnemigo("default",i));
             }
         }
         return list;
@@ -103,14 +133,27 @@ public class Controller {
         }
     }
 
+    public void getRandomEnemyPoints(ActionEvent actionEvent){
+        try {
+            spacecraftPoints = Integer.parseInt(puntajeEnemigoAleatorio.getText());
+            isRandomPoint = true;
+        } catch (NumberFormatException e) {
+            System.out.println("Ingrese un numero valido al puntaje de enemigos aleatorio");
+            e.printStackTrace();
+        }
+    }
+
     public void iniciarJuego(ActionEvent actionEvent) throws IOException {
-        if (checkBoxJuegoUno.isSelected()){
+        if (checkBoxJuegoUno.isSelected() && isRandomPoint){
             Objects.requireNonNull(ClientHandler.getGameById(1)).iniciarJuego();
         }
-        else if (checkBoxJuegoDos.isSelected()){
+        else if (checkBoxJuegoDos.isSelected() && isRandomPoint){
             Objects.requireNonNull(ClientHandler.getGameById(2)).iniciarJuego();
         } else {
-            System.out.println("No se selecciona el juego que quiere manejar");
+            if (!isRandomPoint)
+                System.out.println("No se seleccion el valor del enemigo aleatorio");
+            else
+                System.out.println("No se selecciona el juego que quiere manejar");
         }
     }
 
@@ -150,11 +193,36 @@ public class Controller {
 
     public void eliminarEnemigo(ActionEvent actionEvent) throws IOException {
         if (checkBoxJuegoUno.isSelected()){
-            if (todosEliminar.isSelected()){
-                if (Objects.requireNonNull(ClientHandler.getGameById(1)).getEnemigos().size() >0){
-                    Objects.requireNonNull(ClientHandler.getGameById(1)).sendClientes(Serializer.eliminarEnemigos(Objects.requireNonNull(ClientHandler.getGameById(1)).getEnemigos()));
+            if (isRowSelected()){
+                ClientHandler.getGameById(1).sendClientes(Serializer.eliminarEnemigos(getEnemyDeleteList()));
+            }
+            else{
+                Integer posicionEnemigo = Integer.parseInt(posicionEnemigoEliminar.getText());
+                if (0 < posicionEnemigo && posicionEnemigo < 31){
+                    List<Enemigo> enemigos = new ArrayList<>();
+                    enemigos.add(FactoryEnemigo.getEnemigo("default",posicionEnemigo));
+                    ClientHandler.getGameById(1).sendClientes(Serializer.eliminarEnemigos(enemigos));
+                } else {
+                    System.out.println("Posicion ingresada no se encuentra en el mapa");
                 }
             }
+        }
+        else if (checkBoxJuegoDos.isSelected()){
+            if (isRowSelected()){
+                ClientHandler.getGameById(2).sendClientes(Serializer.eliminarEnemigos(getEnemyDeleteList()));
+            }
+            else{
+                Integer posicionEnemigo = Integer.parseInt(posicionEnemigoEliminar.getText());
+                if (0 < posicionEnemigo && posicionEnemigo < 31){
+                    List<Enemigo> enemigos = new ArrayList<>();
+                    enemigos.add(FactoryEnemigo.getEnemigo("default",posicionEnemigo));
+                    ClientHandler.getGameById(2).sendClientes(Serializer.eliminarEnemigos(enemigos));
+                } else {
+                    System.out.println("Posicion ingresada no se encuentra en el mapa");
+                }
+            }
+        } else {
+            System.out.println("No se selecciona el juego que quiere manejar");
         }
     }
 

@@ -242,7 +242,7 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <Button fx:id="insertarEnemigoAleatorio" layoutX="36.0" layoutY="305.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Insertar" />
+            <Button fx:id="insertarEnemigoAleatorio" layoutX="36.0" layoutY="305.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Insertar" onAction="#getRandomEnemyPoints"/>
             <CheckBox fx:id="checkBoxJuegoUno" layoutX="463.0" layoutY="390.0" mnemonicParsing="false" text="Juego Uno" onAction="#isCheckedJuegoUno">
                <font>
                   <Font size="22.0" />
