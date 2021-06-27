@@ -173,8 +173,9 @@ public class Game {
 
     private void attacked(JSONObject commandJSON) throws IOException {
         this.canon.reducirVida();
-
+        System.out.println("Vida del jugador: " + this.canon.getVidas());
         if (this.canon.getVidas() == 0){
+            System.out.println("la vida es 0");
             this.gameOver();
         } else {
             this.sendClientes(Serializer.updateLives(this.gameId,this.canon.getVidas()));
