@@ -248,14 +248,14 @@ public class Game {
     }
 
     public void gameOver() throws IOException {
+        this.canon.setPuntaje(0);
+        this.canon.setVidas(3);
+        this.sendClientes(Serializer.gameOver(this.gameId,0,3));
         try {
             Thread.sleep(1000);
 
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        this.canon.setPuntaje(0);
-        this.canon.setVidas(3);
-        this.sendClientes(Serializer.gameOver(this.gameId,0,3));
     }
 }
