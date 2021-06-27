@@ -33,9 +33,16 @@ void checkBoundaries()
         checkBoundariesAux(RIGHT);
     }
 
-    if (enemyMatrix[2][9]->posX == WINDOW_MAX_WIDTH)
+    if (enemyMatrix[0][9]->posX == WINDOW_MAX_WIDTH)
     {
         checkBoundariesAux(LEFT);
+    }
+
+    if (enemyMatrix[2][0]->posY == ship->posY)
+    {
+
+        //xd
+
     }
 
 
@@ -66,9 +73,7 @@ void updateEnemiesPosition(cJSON* enemies)
         }
 
         temp += 10;
-    
     }
-
 
 }
 

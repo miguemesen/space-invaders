@@ -1,0 +1,60 @@
+
+Y
+java:S2696Ğ"6Make the enclosing method "static" or remove this set.(º®‡‡ûÿÿÿÿ8úÄÅé¤/
+H
+java:S1444"+Make this "public static games" field final(Éó•±8µË•á¤/
+V
+java:S4973;"9Use the "equals" method if value comparison was intended.(ó¶ßƒ8Õ„Úå¤/
+S
+java:S1444"6Make this "public static game2_disponible" field final(ôÁ8µË•á¤/
+X
+java:S2696L"6Make the enclosing method "static" or remove this set.(ş’µÃúÿÿÿÿ8µË•á¤/
+x
+java:S3008"[Rename this field "game2_disponible" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôÁ8µË•á¤/
+U
+java:S1117f"8Rename "game" which hides the field declared at line 22.(éÔÎ8µË•á¤/
+[
+java:S1117°"8Rename "game" which hides the field declared at line 22.(ÜÀº•øÿÿÿÿ8µË•á¤/
+[	java:S106½"9Replace this use of System.out or System.err by a logger.( ‰ß¨ÿÿÿÿÿ8úÄÅé¤/
+}
+java:S3008"[Rename this field "game1_disponible" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»û²Óıÿÿÿÿ8µË•á¤/
+z	java:S135z"YReduce the total number of break and continue statements in this loop to use at most one.(Úİ²Œûÿÿÿÿ8µË•á¤/
+C
+java:S1170"!Make this final field static too.(İ¡×Şıÿÿÿÿ8’Ø¡Ñ¤/
+F
+java:S1148š"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8µË•á¤/
+F
+java:S1148É"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8úÄÅé¤/
+U	java:S106h"9Replace this use of System.out or System.err by a logger.(ÌØÑÇ8´–úá¤/
+V	java:S106"9Replace this use of System.out or System.err by a logger.(­™ªù8¢Ø÷á¤/
+X
+java:S2696U"6Make the enclosing method "static" or remove this set.(¶éíıÿÿÿÿ8µË•á¤/
+[	java:S106Î"9Replace this use of System.out or System.err by a logger.(üÎóşûÿÿÿÿ8úÄÅé¤/
+X
+java:S1444"6Make this "public static game1_disponible" field final(»û²Óıÿÿÿÿ8µË•á¤/
+u	java:S116"TRename this field "MAX_GAMES" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ¡×Şıÿÿÿÿ8’Ø¡Ñ¤/
+C
+java:S1170"!Make this final field static too.(Íç€àşÿÿÿÿ8µË•á¤/
+o
+java:S3776v"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(“–ış8µË•á¤/
+T
+java:S2696Ô"6Make the enclosing method "static" or remove this set.(ÌãØ°8úÄÅé¤/
+V	java:S106×"9Replace this use of System.out or System.err by a logger.(§ìœ¤8úÄÅé¤/
+F
+java:S1148§"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8µË•á¤/
+?
+java:S3010%""Remove this assignment of "games".(ÜöŞ8Õ„Úå¤/
+n
+java:S1104"QMake games a static final constant or non-public and provide accessors if needed.(Éó•±8µË•á¤/
+V	java:S106¯"9Replace this use of System.out or System.err by a logger.(³¶¦•8•üŞá¤/
+r	java:S117D"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äìÃıÿÿÿÿ8µË•á¤/
+\
+java:S4973±"9Use the "equals" method if value comparison was intended.(Â‹äÖüÿÿÿÿ8ÛÛÁá¤/
+=
+java:S2386%" Make member "games" "protected".(ÜöŞ8Õ„Úå¤/
+~
+java:S1104"\Make game1_disponible a static final constant or non-public and provide accessors if needed.(»û²Óıÿÿÿÿ8µË•á¤/
+r	java:S117e"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ü±ÿÿÿÿÿ8µË•á¤/
+€	java:S116"_Rename this field "MAX_NUM_OF_OBSERVERS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íç€àşÿÿÿÿ8µË•á¤/
+y
+java:S1104"\Make game2_disponible a static final constant or non-public and provide accessors if needed.(ôÁ8µË•á¤/

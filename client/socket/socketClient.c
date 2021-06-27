@@ -73,8 +73,7 @@ _Noreturn void *listen_socket(){
             else if (strcmp(command, "updateGameState") == 0)
             {
 
-            
-
+        
                 cJSON* bulletEnemyJSON = cJSON_GetObjectItem(serverReplyCommand, "bulletEnemy");
                 int bulletEnemyPosX = cJSON_GetObjectItem(bulletEnemyJSON, "posX")->valueint;
                 int bulletEnemyPosY = cJSON_GetObjectItem(bulletEnemyJSON, "posY")->valueint;
@@ -131,13 +130,33 @@ _Noreturn void *listen_socket(){
             {
 
 
-                int enemiesId = cJSON_GetObjectItem(serverReplyCommand, "enemyId");
-
-
-
+                cJSON* enemies = cJSON_GetObjectItem(serverReplyCommand, "enemies");
+                deleteEnemy(enemies);
+                
 
     
             }
+
+            else if (strcmp(command, "updateScore") == 0)
+            {
+
+
+                int newScore = cJSON_GetObjectItem(serverReplyCommand, "score")->valueint;
+                updateScore(newScore);
+
+
+            }
+
+            else if(strcmp(command, "updateLives") == 0)
+            {
+
+                int newLives = cJSON_GetObjectItem(serverReplyCommand, "lives")->valueint;
+                updateLives(newLives);
+
+            }
+
+
+
 
 
 

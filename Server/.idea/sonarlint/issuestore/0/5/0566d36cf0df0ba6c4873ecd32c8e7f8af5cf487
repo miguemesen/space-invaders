@@ -1,0 +1,4 @@
+
+N	java:S106*"9Replace this use of System.out or System.err by a logger.(¬¾í
+>
+java:S11482"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ

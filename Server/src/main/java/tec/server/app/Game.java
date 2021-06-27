@@ -208,7 +208,7 @@ public class Game {
 
     public void addObserver(ClientHandler observer) throws IOException {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(3500);
 
         } catch (InterruptedException e) {
             e.printStackTrace();

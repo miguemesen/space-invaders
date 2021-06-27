@@ -11,6 +11,7 @@
 #include "bullet.h"
 #include "../util.h"
 #include "../../socket/cJson.h"
+#include "../gameObjets/ship.h"
 
 typedef struct Enemy
 {

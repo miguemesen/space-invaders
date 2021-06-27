@@ -36,6 +36,22 @@ void moveShip(int dir)
 }
 
 
+void updateScore(int newScore)
+{
+
+    ship->score = newScore;
+
+
+}
+
+
+
+void updateLives(int newLives)
+{
+    ship->lives = newLives;
+}
+
+
 void updateShipPosition(int posX, int posY)
 {
 
