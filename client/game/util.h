@@ -12,7 +12,7 @@
 
 int generateRandomNum(int maxValue);
 
-
+SDL_Texture* loadTexture(const char* path);
 
 
 

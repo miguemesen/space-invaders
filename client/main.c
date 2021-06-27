@@ -40,6 +40,7 @@ void menu()
         printf("1. Partida 1 \n");
         printf("2. Partida 2 \n");
         scanf("%d", &id);
+        sendObserverCommand(id);
         sleep(2);
         if(connectionSuccessful){
             createWindow(id, 1);

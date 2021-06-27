@@ -53,6 +53,8 @@ void createWindow(int id, int observing){
     createBunkers();
     createEnemies();
     createSpacecraft();
+    createBulletEnemy();
+    createBulletPlayer();
     gameLoop();
 
 }
@@ -122,9 +124,16 @@ void gameLoop(){
             moveEnemies();
             moveSpacecraft();
             enemyFire();
+            collisions();
+            sendUpdateGameStateCommand();
         }
 
-        collisions();
+
+    
+
+        
+
+
 
         SDL_RenderClear(renderer);
             
@@ -262,51 +271,13 @@ void createEnemies()
 
 
 
-void putEnemy(char* type, int enemyId)
-{
-
-
-    Enemy* enemy = getEnemyByID(enemyId);
-
-    if (strcmp(type, "crab"))
-    {
-        enemy->texture = loadTexture(CRAB_SPRITE_PATH);
-        enemy->type = "crab";
-    }
-
-    else if (strcmp(type, "octo"))
-    {
-        enemy->texture = loadTexture(OCTO_SPRITE_PATH);
-        enemy->type = "octo";
-    }
-    else if (strcmp(type, "squid"))
-    {
-        enemy->texture = loadTexture(SQUID_SPRITE_PATH);
-        enemy->type = "squid";
-    }
-    enemy->isActive = 1;
-
-
-
-}
-
-
-
 void shoot()
 {
-    if (bulletPlayer == NULL)
+    if (!bulletPlayer->isActive)
     {
-        bulletPlayer = (Bullet*) malloc(sizeof(Bullet));
-        bulletPlayer->posX = ship->posX + 20;
-        bulletPlayer->posY = ship->posY; 
-        bulletPlayer->width = RECT_WIDTH_BULLET;
-        bulletPlayer->height = RECT_HEIGHT_BULLET;
-        bulletPlayer->texture = loadTexture(BULLET_SPRITE_PATH);
-        bulletPlayer->textureImpact = loadTexture(IMPACT_SPRITE_PATH);
-        bulletPlayer->currentTexture = bulletPlayer->texture;
-        bulletPlayer->next = NULL;
 
-        sendPutBulletPlayerCommand(bulletPlayer->posX, bulletPlayer->posY);
+        updateBulletPlayer(ship->posX + 20, ship->posY, ACTIVE);
+        //sendPutBulletPlayerCommand(bulletPlayer->posX, bulletPlayer->posY);
     }
 
 }
@@ -316,26 +287,16 @@ void shoot()
 void enemyFire()
 {
 
-    if (bulletEnemy == NULL)
-    {   
-
+    if (!bulletEnemy->isActive)
+    {
+  
         int i = generateRandomNum(ROW_ENEMY_MATRIX - 1);
         int j = generateRandomNum(COLUMNS_ENEMY_MATRIX - 1);
         Enemy* tempEnemy = enemyMatrix[i][j];
-        bulletEnemy = (Bullet*) malloc(sizeof(Bullet));
-        bulletEnemy->posX = tempEnemy->posX;
-        bulletEnemy->posY = tempEnemy->posY;
-        bulletEnemy->width = RECT_WIDTH_BULLET;
-        bulletEnemy->height = RECT_HEIGHT_BULLET;
-        bulletEnemy->texture = loadTexture(BULLET_SPRITE_PATH);
-        bulletEnemy->textureImpact = loadTexture(IMPACT_SPRITE_PATH);
-        bulletEnemy->currentTexture = bulletEnemy->texture;
-        bulletEnemy->next = NULL;
 
+        updateBulletEnemy(tempEnemy->posX, tempEnemy->posY, ACTIVE);
+        //sendPutBulletEnemyCommand(bulletEnemy->posX, bulletEnemy->posY);
 
-        sendPutBulletEnemyCommand(bulletEnemy->posX, bulletEnemy->posY);
-
-        
     }
 
 
@@ -349,7 +310,7 @@ void createSpacecraft()
     spacecraft = (Spacecraft*) malloc(sizeof(Spacecraft));
     spacecraft->posX = WINDOW_MAX_WIDTH;
     spacecraft->posY = 100;
-    spacecraft->active = 0;
+    spacecraft->isActive = 0;
     spacecraft->texture = loadTexture(SPACECRAFT_SPRITE_PATH);
 
 
@@ -370,14 +331,13 @@ void collisions()
 void bulletPlayerCollisions()
 {
 
-    if (bulletPlayer != NULL)
+    if (bulletPlayer->isActive)
     {
 
         if (bunkerCollision(bulletPlayer->posX, bulletPlayer->posY))
         {
 
-            free(bulletPlayer);
-            bulletPlayer = NULL;
+            bulletPlayer->isActive = 0;
 
 
         }
@@ -385,23 +345,22 @@ void bulletPlayerCollisions()
         else if(enemiesCollision(bulletPlayer->posX, bulletPlayer->posY))
         {
 
-            free(bulletPlayer);
-            bulletPlayer = NULL;
+            bulletPlayer->isActive = 0;
         }
 
         else if(spacecraftCollision(bulletPlayer->posX, bulletPlayer->posY))
         {
 
-            free(bulletPlayer);
-            bulletPlayer = NULL;
+
+            bulletPlayer->isActive = 0;
+
 
         }
 
         else if(bulletPlayer->posY <= WINDOW_MIN_HEIGHT)
         {
 
-            free(bulletPlayer);
-            bulletPlayer = NULL;
+            bulletPlayer->isActive = 0;
 
         }
 
@@ -415,30 +374,26 @@ void bulletPlayerCollisions()
 void bulletEnemyCollisions()
 {
 
-    if (bulletEnemy != NULL)
+    if (bulletEnemy->isActive)
     {
 
         if (bunkerCollision(bulletEnemy->posX, bulletEnemy->posY))
         {
-
-            free(bulletEnemy);
-            bulletEnemy = NULL;
+            bulletEnemy->isActive = 0;
                     
         }
 
         else if(shipCollision(bulletEnemy->posX, bulletEnemy->posY))
         {
 
-            free(bulletEnemy);
-            bulletEnemy = NULL;
+           bulletEnemy->isActive = 0;
 
         }
 
         else if(bulletEnemy->posY >= WINDOW_MAX_HEIGHT)
         {
 
-            free(bulletEnemy);
-            bulletEnemy = NULL;
+            bulletEnemy->isActive = 0;
 
         }
     }
@@ -450,7 +405,7 @@ void bulletEnemyCollisions()
 int shipCollision(int posX, int posY)
 {
 
-    if(bulletEnemy != NULL)
+    if(bulletEnemy->isActive)
     {
 
         if(posX >= ship->posX && posX <= ship->posX + 40 && posY >= ship->posY && posY <= ship->posY + 40)
@@ -481,7 +436,7 @@ int bunkerCollision(int posX, int posY)
     for(int i=0; i < NUMBER_OF_BUNKERS; i++)
     {
 
-        Enemy* current = bunkerList[i];
+        Bunker* current = bunkerList[i];
     
 
         if(current->isActive)
@@ -489,7 +444,10 @@ int bunkerCollision(int posX, int posY)
             if(posX >= current->posX && posX <= current->posX + 90 && posY >= current->posY && posY <= current->posY + 70)
             {
 
+
+                current->health -= 20;
                 updateBunkerHealth(&current);
+                sendUpdateBunkerCommand(bunkerList);
                 return 1;
 
             }
@@ -543,7 +501,7 @@ int enemiesCollision(int posX, int posY)
 int spacecraftCollision(int posX, int posY)
 {
 
-    if (spacecraft->active)
+    if (spacecraft->isActive)
     {
 
 

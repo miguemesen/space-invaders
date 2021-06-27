@@ -25,6 +25,6 @@ Ship* ship;
 
 void moveShip(int dir);
 void sendMovePlayerCommand(int posX, int posY);
-
+void updateShipPosition(int posX, int posY);
 
 #endif //SHIP_H

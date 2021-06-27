@@ -16,23 +16,21 @@ void sendObserverCommand(int id);
 
 void sendMovePlayerCommand(int posX, int posY);
 
-void sendMoveBulletPlayerCommand(int posX, int posY);
-
-void sendMoveBulletEnemyCommand(int posX, int posY);
-
-void sendPutBulletPlayerCommand(int posX, int posY);
-
-void sendPutBulletEnemyCommand(int posX, int posY);
-
 void sendAttakedCommand();
 
 void sendKillEnemyCommand(int enemyId, char* type);
 
 void sendUpdateBunkerCommand(Bunker* bunkerList[NUMBER_OF_BUNKERS]);
 
-void sendMoveEnemiesCommand(Enemy* enemyMatrix[ROW_ENEMY_MATRIX][COLUMNS_ENEMY_MATRIX]);
+cJSON* spacecraftState();
 
-void sendMoveSpacecraftCommand(int posX, int posY);
+cJSON* bulletPlayerState();
+
+cJSON* bulletEnemyState();
+
+cJSON* enemiesState();
+
+void sendUpdateGameStateCommand();
 
 
 

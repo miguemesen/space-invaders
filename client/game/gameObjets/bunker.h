@@ -44,5 +44,9 @@ void updateBunkers(cJSON* bunkers);
 
 Bunker* initBunkerList();
 
+void createBulletEnemy();
+
+void createBulletPlayer();
+
 
 #endif

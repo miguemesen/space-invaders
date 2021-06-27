@@ -50,14 +50,12 @@ int spacecraftCollision(int posX, int posY);
 void putEnemy(char* type, int enemyId);
 
 
-SDL_Texture* loadTexture(const char* path);
-
-
 void sendPutBulletPlayerCommand(int posX, int posY);
 void sendPutBulletEnemyCommand(int posX, int posY);
 void sendKillPlayerCommand();
 void sendKillEnemyCommand(int enemyId, char* type);
 void sendAttakedCommand();
+void sendUpdateGameStateCommand();
 
 #endif //CLIENT_GAME_CUH
 
