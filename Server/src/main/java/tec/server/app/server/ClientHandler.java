@@ -28,7 +28,11 @@ public class ClientHandler implements Runnable{
 
     // Constructor
     public ClientHandler(Socket client) throws IOException {
-        games = Collections.synchronizedList(new ArrayList<>());
+
+        if (games == null) {
+            games = Collections.synchronizedList(new ArrayList<>());
+        }
+
         this.clientSocket = client;
         this.out = new PrintWriter(client.getOutputStream(),true);
         this.in = new BufferedReader(new InputStreamReader(client.getInputStream()));
@@ -47,6 +51,7 @@ public class ClientHandler implements Runnable{
                 return game;
 
         }
+        System.out.println("Entraaaa");
         return null;
     }
 
@@ -88,6 +93,7 @@ public class ClientHandler implements Runnable{
     private void createNewGame(Integer game_id) {
         Game game = new Game(game_id,this);
         ClientHandler.games.add(game);
+        System.out.println(ClientHandler.games.size());
         this.game = game;
     }
 
@@ -127,6 +133,7 @@ public class ClientHandler implements Runnable{
 
                 } 
                 if (command.equals("observer")){
+                    System.out.println("Entra a agregar un observador");
                     this.observerHandler(responseJson);
                 }
                 else { // No se entiende el comando enviado, por lo que es un comando para el juego
@@ -157,6 +164,7 @@ public class ClientHandler implements Runnable{
     private void observerHandler(JSONObject responseJson) throws IOException {
         Integer gameId = Integer.parseInt(responseJson.get("gameId").toString());
 
+        System.out.println(games.size());
         for (Game game : games){
             if (game.getGameId() == gameId){
                 if (game.getNumberObservers() < MAX_NUM_OF_OBSERVERS){
@@ -170,6 +178,7 @@ public class ClientHandler implements Runnable{
     }
 
     private void endExecution() {
+        System.out.println("END EXECUTION");
         if (game.getPlayer() == this){
             game.gameOver();
             freeGame(game.getGameId());
@@ -186,6 +195,7 @@ public class ClientHandler implements Runnable{
     }
 
     private void freeGame(Integer gameId) {
+        System.out.println("FREE GAME");
         if (gameId == 1){
             game1_disponible = false;
             games.remove(game);

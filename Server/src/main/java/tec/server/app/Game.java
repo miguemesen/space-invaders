@@ -183,7 +183,7 @@ public class Game {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        observer.send(Serializer.sendAllGame(gameId,this.canon,this.enemigos,this.enemyBullet,this.playerBullet,this.escudos));
+        //observer.send(Serializer.sendAllGame(gameId,this.canon,this.enemigos,this.enemyBullet,this.playerBullet,this.escudos));
     }
 
     public void removeObserver(ClientHandler clientHandler) {
