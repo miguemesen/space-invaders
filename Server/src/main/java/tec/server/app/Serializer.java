@@ -88,7 +88,7 @@ public class Serializer {
         }
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("enemies",jsonArray);
-        jsonObject.put("command","putEnemmies");
+        jsonObject.put("command","putEnemies");
         return jsonObject.toJSONString();
     }
 
