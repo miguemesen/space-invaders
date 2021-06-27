@@ -134,6 +134,10 @@ public class Game {
         String enemyType = commandJSON.get("type").toString();
 
         Enemigo enemigo = FactoryEnemigo.getEnemigo(enemyType,enemyId);
+
+        if (enemigo.getTipo().equals("spacecraft"))
+            enemigo.setPuntaje(Controller.getSpacecraftPoints());
+
         this.canon.aumentarPuntaje(enemigo.getPuntaje());
 
         this.enemigos.remove(enemigo);
