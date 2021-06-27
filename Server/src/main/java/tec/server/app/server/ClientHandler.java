@@ -185,7 +185,7 @@ public class ClientHandler implements Runnable{
         }
     }
 
-    private void endExecution() {
+    private void endExecution() throws IOException {
         System.out.println("END EXECUTION");
         if (game.getPlayer() == this){
             game.gameOver();

@@ -32,6 +32,16 @@ public class Serializer {
         return jsonObject.toJSONString();
     }
 
+    public static String gameOver(Integer gameId, Integer score, Integer lives){
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("command","gameOver");
+        jsonObject.put("gameId",gameId);
+        jsonObject.put("score",score);
+        jsonObject.put("lives", lives);
+        jsonObject.put("shields",100);
+        return jsonObject.toJSONString();
+    }
+
     public static String updateScore(Integer gameId, Integer score){
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("command","updateScore");

@@ -106,8 +106,25 @@ public class Game {
         if (commandJSON.get("command").equals("killEnemy"))
             this.killEnemy(commandJSON);
 
+        if (commandJSON.get("command").equals("win"))
+            this.win(commandJSON);
+
+        if (commandJSON.get("command").equals("gameOver"))
+            this.gameOver();
+
 //        if (commandJSON.get("command").equals("moveSpacecraft"))
 //            this.moveSpacecraft(commandJSON);
+    }
+
+    private void win(JSONObject commandJSON) throws IOException {
+        this.canon.aumentarVida();
+        try {
+            Thread.sleep(20);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        this.sendClientes(Serializer.updateLives(this.gameId,this.canon.getVidas()));
     }
 
     private void updateGameState(JSONObject commandJSON) throws IOException {
@@ -156,8 +173,9 @@ public class Game {
 
     private void attacked(JSONObject commandJSON) throws IOException {
         this.canon.reducirVida();
-
+        System.out.println("Vida del jugador: " + this.canon.getVidas());
         if (this.canon.getVidas() == 0){
+            System.out.println("la vida es 0");
             this.gameOver();
         } else {
             this.sendClientes(Serializer.updateLives(this.gameId,this.canon.getVidas()));
@@ -229,7 +247,9 @@ public class Game {
         this.observers.remove(clientHandler);
     }
 
-    public void gameOver() {
-
+    public void gameOver() throws IOException {
+        this.canon.setPuntaje(0);
+        this.canon.setVidas(3);
+        this.sendClientes(Serializer.gameOver(this.gameId,0,3));
     }
 }
