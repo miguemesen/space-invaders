@@ -136,6 +136,8 @@ public class Game {
         Enemigo enemigo = FactoryEnemigo.getEnemigo(enemyType,enemyId);
         this.canon.aumentarPuntaje(enemigo.getPuntaje());
 
+        this.enemigos.remove(enemigo);
+
         sendClientes(Serializer.updateScore(this.gameId,this.canon.getPuntaje()));
     }
 

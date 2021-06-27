@@ -42,7 +42,7 @@ public class Serializer {
 
     public static String updateLives(Integer gameId, Integer lives){
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("command","lives");
+        jsonObject.put("command","updateLives");
         jsonObject.put("lives", lives);
         jsonObject.put("gameId",gameId);
         return jsonObject.toJSONString();
