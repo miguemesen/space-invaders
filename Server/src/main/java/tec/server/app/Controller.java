@@ -152,7 +152,7 @@ public class Controller {
         if (checkBoxJuegoUno.isSelected()){
             if (todosEliminar.isSelected()){
                 if (Objects.requireNonNull(ClientHandler.getGameById(1)).getEnemigos().size() >0){
-
+                    Objects.requireNonNull(ClientHandler.getGameById(1)).sendClientes(Serializer.eliminarEnemigos(Objects.requireNonNull(ClientHandler.getGameById(1)).getEnemigos()));
                 }
             }
         }

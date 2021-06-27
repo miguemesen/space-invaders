@@ -43,6 +43,8 @@ public class Game {
             this.escudos.add(new Escudo(i));
     }
 
+
+
     public List<Enemigo> getEnemigos() {
         return enemigos;
     }
@@ -133,6 +135,8 @@ public class Game {
 
         Enemigo enemigo = FactoryEnemigo.getEnemigo(enemyType,enemyId);
         this.canon.aumentarPuntaje(enemigo.getPuntaje());
+
+        this.enemigos.remove(enemigo);
 
         sendClientes(Serializer.updateScore(this.gameId,this.canon.getPuntaje()));
     }
