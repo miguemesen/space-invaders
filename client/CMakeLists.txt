@@ -10,7 +10,7 @@ include_directories(${SDL2_INCLUDE_DIRS})
 set(CMAKE_C_FLAGS "-pthread")
 
 
-add_executable(client main.c Game/game.c Game/game.h constants.h Game/gameObjets/ship.h Game/gameObjets/ship.c Game/render.h
- Game/render.c Game/gameObjets/bullet.h Game/gameObjets/bullet.c Game/gameObjets/bunker.h Game/gameObjets/bunker.c Game/collisions.h
- Game/collisions.c Game/gameObjets/enemy.c Game/gameObjets/enemy.h Game/util.h Game/util.c Game/gameObjets/spacecraft.h Game/gameObjets/spacecraft.c)
+add_executable(client main.c game/game.c game/game.h constants.h game/gameObjets/ship.h game/gameObjets/ship.c game/render.h
+ game/render.c game/gameObjets/bullet.h game/gameObjets/bullet.c game/gameObjets/bunker.h game/gameObjets/bunker.c game/gameObjets/enemy.c game/gameObjets/enemy.h game/util.h game/util.c game/gameObjets/spacecraft.h game/gameObjets/spacecraft.c
+ socket/cJson.h socket/cJson.c socket/socketClient.h socket/socketClient.c socket/serializer.h socket/serializer.c)
 target_link_libraries(client ${SDL2_LIBRARIES} SDL2_image SDL2_ttf)

@@ -14,6 +14,8 @@
 #define RECT_WIDTH_BUNKER 100
 #define RECT_HEIGHT_BUNKER 75
 
+#define PORT 1234
+#define IP "127.0.0.1"
 
 #define DELAY 30
 #define LEFT -1 
@@ -24,6 +26,7 @@
 #define INITIAL_POS_Y 640
 #define ROW_ENEMY_MATRIX 3
 #define COLUMNS_ENEMY_MATRIX 10
+#define NUMBER_OF_BUNKERS 4
 
 #define BUNKER_LIST_SIZE 4
 
@@ -44,6 +47,8 @@
 #define BUNKER_20HEALTH_SPRITE_PATH "../resources/bunker_deterioro_4.png"
 #define SPACECRAFT_SPRITE_PATH "../resources/platilloVolador.png"
 #define CRAB_SPRITE_PATH "../resources/cangrejo.png"
+#define OCTO_SPRITE_PATH "../resources/pulpo.png"
+#define SQUID_SPRITE_PATH "../resources/calamar.png"
 
 
 

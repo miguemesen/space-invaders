@@ -1,3 +1,0 @@
-/home/sebasmora/Desktop/cacaInvaderss/build/CMakeFiles/rebuild_cache.dir
-/home/sebasmora/Desktop/cacaInvaderss/build/CMakeFiles/client.dir
-/home/sebasmora/Desktop/cacaInvaderss/build/CMakeFiles/edit_cache.dir
