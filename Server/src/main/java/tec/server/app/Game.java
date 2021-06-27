@@ -109,6 +109,8 @@ public class Game {
         if (commandJSON.get("command").equals("win"))
             this.win(commandJSON);
 
+        if (commandJSON.get("command").equals("gameOver"))
+            this.gameOver();
 
 //        if (commandJSON.get("command").equals("moveSpacecraft"))
 //            this.moveSpacecraft(commandJSON);
@@ -244,7 +246,9 @@ public class Game {
         this.observers.remove(clientHandler);
     }
 
-    public void gameOver() {
-
+    public void gameOver() throws IOException {
+        this.canon.setPuntaje(0);
+        this.canon.setVidas(3);
+        this.sendClientes(Serializer.gameOver(this.gameId,0,3));
     }
 }
