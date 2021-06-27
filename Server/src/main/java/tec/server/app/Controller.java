@@ -193,7 +193,10 @@ public class Controller {
 
     public void eliminarEnemigo(ActionEvent actionEvent) throws IOException {
         if (checkBoxJuegoUno.isSelected()){
-            if (isRowSelected()){
+            if (todosEliminar.isSelected()){
+                ClientHandler.getGameById(1).sendClientes(Serializer.eliminarEnemigos(getEnemyDeleteList()));
+            }
+            else if (isRowSelected()){
                 ClientHandler.getGameById(1).sendClientes(Serializer.eliminarEnemigos(getEnemyDeleteList()));
             }
             else{
