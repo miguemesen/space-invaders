@@ -144,7 +144,7 @@ public class Controller {
     public void isCheckedCangrejo(ActionEvent actionEvent) {
         tipoEnemigoPulpo.setSelected(false);
         tipoEnemigoCalamar.setSelected(false);
-        tipoEnemigo = "crap";
+        tipoEnemigo = "crab";
     }
 
 
