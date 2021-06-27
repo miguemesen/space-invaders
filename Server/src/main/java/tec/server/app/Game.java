@@ -92,7 +92,7 @@ public class Game {
 //        if (commandJSON.get("command").equals("moveBulletEnemy") || commandJSON.get("command").equals("moveBulletPlayer"))
 //            this.moverBalas(commandJSON);
 
-        if (commandJSON.get("command").equals("updateBunker"))
+        if (commandJSON.get("command").equals("updateBunkers"))
             this.actualizarEscudo(commandJSON);
 
         if (commandJSON.get("command").equals("attacked"))

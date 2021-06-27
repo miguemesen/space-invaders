@@ -29,7 +29,7 @@ public class Controller {
 
 
     public void insertarEnemigo(){
-        if (checkBoxJuegoUno.isSelected()){
+        if (checkBoxJuegoUno.isSelected() && (tipoEnemigoCalamar.isSelected() || tipoEnemigoPulpo.isSelected() || tipoEnemigoCangrejo.isSelected())){
 
         }
         else if (checkBoxJuegoDos.isSelected()){
@@ -59,7 +59,7 @@ public class Controller {
     }
 
     public void isCheckedEliminarTodos(ActionEvent actionEvent) {
-        insertarEnemigoPosicion.clear();
+        posicionEnemigoEliminar.clear();
     }
 
     public void isCheckedPulpo(ActionEvent actionEvent) {
@@ -87,4 +87,16 @@ public class Controller {
     }
 
 
+    public void isCheckedFilaUno(ActionEvent actionEvent) {
+        insertarEnemigoPosicion.clear();
+    }
+
+    public void isCheckedFilaDos(ActionEvent actionEvent) {
+        insertarEnemigoPosicion.clear();
+    }
+
+    public void isCheckedFilaTres(ActionEvent actionEvent) {
+        insertarEnemigoPosicion.clear();
+
+    }
 }
