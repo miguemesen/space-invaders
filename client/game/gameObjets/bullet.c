@@ -23,7 +23,7 @@ void moveBulletsPlayer() //Recorre la lista de balas del jugador para moverlas
     {
   
         bulletPlayer->posY -= BULLET_MOVE; //Actualiza la posicion 
-        sendMoveBulletPlayerCommand(bulletPlayer->posX, bulletPlayer->posY);
+        //sendMoveBulletPlayerCommand(bulletPlayer->posX, bulletPlayer->posY);
 
     }
 
@@ -39,7 +39,7 @@ void moveBulletsEnemy() //Recorre la lista de los enemigos para moverlas
 
     
         bulletEnemy->posY += BULLET_MOVE; //Actualiza la posicion 
-        sendMoveBulletEnemyCommand(bulletEnemy->posX, bulletEnemy->posY);
+        //sendMoveBulletEnemyCommand(bulletEnemy->posX, bulletEnemy->posY);
        
 
     }
@@ -58,39 +58,62 @@ void moveBullets()
 
 }
 
-void updateBulletPlayer(int posX, int posY)
+void updateBulletPlayer(int posX, int posY, int isActive)
 {
 
-    if (bulletPlayer != NULL)
-    {
+  
+    bulletPlayer->isActive = isActive; 
+    bulletPlayer->posX = posX; 
+    bulletPlayer->posY = posY;
 
-        bulletPlayer->posX; 
-        bulletPlayer->posY;
 
-    }
 
 
 
 }
 
 
-void updateBulletEnemy(int posX, int posY)
+void updateBulletEnemy(int posX, int posY, int isActive)
 {
 
-      if (bulletEnemy != NULL)
-    {
+   
 
-        bulletEnemy->posX; 
-        bulletEnemy->posY;
-
-    }
-
+        
+    bulletEnemy->isActive = isActive;
+    bulletEnemy->posX = posX; 
+    bulletEnemy->posY = posY;
 
 
 }
 
 
 
+void createBulletPlayer()
+{
+
+        bulletPlayer = (Bullet*) malloc(sizeof(Bullet));
+        bulletPlayer->posX = 0;
+        bulletPlayer->posY = 0;
+        bulletPlayer->isActive = 0;
+        bulletPlayer->texture = loadTexture(BULLET_SPRITE_PATH);
+        bulletPlayer->currentTexture = bulletPlayer->texture;
+    
+}
+
+
+
+void createBulletEnemy()
+{
+
+        bulletEnemy = (Bullet*) malloc(sizeof(Bullet));
+        bulletEnemy->posX = 0;
+        bulletEnemy->posY = 0;
+        bulletEnemy->isActive = 0;
+        bulletEnemy->texture = loadTexture(BULLET_SPRITE_PATH);
+        bulletEnemy->currentTexture = bulletEnemy->texture;
+
+
+}
 
 
 

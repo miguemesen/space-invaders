@@ -12,7 +12,7 @@ typedef struct  Spacecraft
 {
     int posX;
     int posY;
-    int active;
+    int isActive;
     SDL_Texture *texture;
     
 
@@ -30,8 +30,7 @@ void moveSpacecraft();
 int shouldMove();
 void killSpacecraft();
 
-void updateSpaceCraftPosition(int posX, int posY);
-
+void updateSpaceCraft(int posX, int posY, int isActive);
 
 void sendMoveSpacecraftCommand(int posX, int posY);
 

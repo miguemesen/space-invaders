@@ -68,6 +68,55 @@ void updateEnemiesPosition(cJSON* enemies)
     }
 
 
+}
+
+
+void putEnemy(char* type, int enemyId)
+{
+
+
+    Enemy* enemy = getEnemyByID(enemyId);
+
+    if (strcmp(type, "crab"))
+    {
+        enemy->texture = loadTexture(CRAB_SPRITE_PATH);
+        enemy->type = "crab";
+    }
+
+    else if (strcmp(type, "octo"))
+    {
+        enemy->texture = loadTexture(OCTO_SPRITE_PATH);
+        enemy->type = "octo";
+    }
+    else if (strcmp(type, "squid"))
+    {
+        enemy->texture = loadTexture(SQUID_SPRITE_PATH);
+        enemy->type = "squid";
+    }
+    enemy->isActive = 1;
+
+}
+
+
+
+void deleteEnemy(cJSON* enemies)
+{
+
+
+    for(int i=0; i < cJSON_GetArraySize(enemies); i++)
+    {
+
+        cJSON * enemy = cJSON_GetArrayItem(enemies, i);
+        int id = cJSON_GetObjectItem(enemy, "id")->valueint;
+
+        Enemy* currentEnemy = getEnemyByID(id);
+
+        currentEnemy->isActive = 0;
+     
+
+
+    }
+
 
 
 
@@ -120,7 +169,7 @@ void moveEnemies()
     }
 
     checkBoundaries();
-    sendMoveEnemiesCommand(enemyMatrix);
+    //sendMoveEnemiesCommand(enemyMatrix);
 
 
 }

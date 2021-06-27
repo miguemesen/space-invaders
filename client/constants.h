@@ -17,7 +17,9 @@
 #define PORT 1234
 #define IP "127.0.0.1"
 
-#define DELAY 30
+#define ACTIVE 1
+
+#define DELAY 50
 #define LEFT -1 
 #define RIGHT 1
 #define SHIP_MOVE 10

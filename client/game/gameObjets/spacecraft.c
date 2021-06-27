@@ -5,7 +5,7 @@
 int shouldMove()
 {
 
-    if (!spacecraft->active)
+    if (!spacecraft->isActive)
     {
 
         currentTime = (double) clock();
@@ -14,7 +14,7 @@ int shouldMove()
         if (time_ >= 0.7)
         {
 
-            spacecraft->active = 1;
+            spacecraft->isActive = 1;
             return 1;
 
         }
@@ -44,7 +44,7 @@ void moveSpacecraft()
 
         }
 
-        sendMoveSpacecraftCommand(spacecraft->posX, spacecraft->posY);
+        //sendMoveSpacecraftCommand(spacecraft->posX, spacecraft->posY);
         prevTime = (double) clock();
 
     }
@@ -58,11 +58,12 @@ void moveSpacecraft()
 
 
 
-void updateSpaceCraftPosition(int posX, int posY)
+void updateSpaceCraft(int posX, int posY, int isActive)
 {
 
     spacecraft->posX = posX;
     spacecraft->posY = posY;
+    spacecraft->isActive = isActive;
 
     if (spacecraft->posX <= WINDOW_MIN_WIDTH)
     {
@@ -79,7 +80,7 @@ void updateSpaceCraftPosition(int posX, int posY)
 
 void killSpacecraft()
 {
-    spacecraft->active = 0;
+    spacecraft->isActive = 0;
     time_ = 0;
     spacecraft->posX = WINDOW_MAX_WIDTH;
 

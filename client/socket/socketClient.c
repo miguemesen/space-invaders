@@ -38,9 +38,10 @@ _Noreturn void *listen_socket(){
     while(1){
 
         if (read(client, server_reply, 2000) > 0) {
-            printf("xdd %s",server_reply);
+            //printf("xdd %s \n",server_reply);
             cJSON *serverReplyCommand = cJSON_Parse(server_reply);
             char* command = cJSON_GetObjectItem(serverReplyCommand, "command")->valuestring;
+            //printf("command : %s \n", command);
 
 
             if(strcmp(command, "startGame") == 0)
@@ -58,63 +59,88 @@ _Noreturn void *listen_socket(){
                 
             }
 
-
-            else if (strcmp(command, "moveEnemies") == 0)
+            else if (strcmp(command, "movePlayer") == 0)
             {
 
-                cJSON *enemies = cJSON_GetObjectItem(serverReplyCommand, "enemies");
 
-                updateEnemiesPosition(enemies);
+                int posX = cJSON_GetObjectItem(serverReplyCommand, "posX")->valueint;
+                int posY = cJSON_GetObjectItem(serverReplyCommand, "posY")->valueint;
+                updateShipPosition(posX, posY);
+
+
+            }
+
+            else if (strcmp(command, "updateGameState") == 0)
+            {
+
+            
+
+                cJSON* bulletEnemyJSON = cJSON_GetObjectItem(serverReplyCommand, "bulletEnemy");
+                int bulletEnemyPosX = cJSON_GetObjectItem(bulletEnemyJSON, "posX")->valueint;
+                int bulletEnemyPosY = cJSON_GetObjectItem(bulletEnemyJSON, "posY")->valueint;
+                int bulletEnemyIsActive = cJSON_GetObjectItem(bulletEnemyJSON, "isActive")->valueint;
+                updateBulletEnemy(bulletEnemyPosX, bulletEnemyPosY, bulletEnemyIsActive);
+                
+
+
+                cJSON* bulletPlayerJSON = cJSON_GetObjectItem(serverReplyCommand, "bulletPlayer");
+                int bulletPlayerPosX = cJSON_GetObjectItem(bulletPlayerJSON, "posX")->valueint;
+                int bulletPlayerPosY = cJSON_GetObjectItem(bulletPlayerJSON, "posY")->valueint;
+                int bulletPlayerIsActive = cJSON_GetObjectItem(bulletPlayerJSON, "isActive")->valueint;
+                updateBulletPlayer(bulletPlayerPosX, bulletPlayerPosY, bulletPlayerIsActive);
+
+
+
+                cJSON* bulletEnemiesJSON = cJSON_GetObjectItem(serverReplyCommand, "enemies");
+                updateEnemiesPosition(bulletEnemiesJSON);
+
+                cJSON* spacecraftJSON = cJSON_GetObjectItem(serverReplyCommand, "spacecraft");
+                int spacecraftPosX = cJSON_GetObjectItem(spacecraftJSON , "posX")->valueint;
+                int spacecraftPosY = cJSON_GetObjectItem(spacecraftJSON , "posY")->valueint;
+                int spacecraftIsActive = cJSON_GetObjectItem(spacecraftJSON , "isActive")->valueint;
+                updateSpaceCraft(spacecraftPosX, spacecraftPosY,spacecraftIsActive);
 
             }
 
 
+    
             else if (strcmp(command, "updateBunkers") == 0)
             {
+        
 
                 cJSON *bunkers = cJSON_GetObjectItem(serverReplyCommand, "bunkers");
 
-                void updateBunkers(cJSON* bunkers);
+
+                updateBunkers(bunkers);
 
             }
 
-            else if (strcmp(command, "moveBulletPlayer") == 0)
+
+
+            else if (strcmp(command, "putEnemy")== 0)
             {
-
-                int posX = cJSON_GetObjectItem(serverReplyCommand, "posX")->valueint;
-                int posY = cJSON_GetObjectItem(serverReplyCommand, "posY")->valueint;
-                updateBulletPlayer(posX, posY);
-
-            }
-
-            else if (strcmp(command, "moveBulletEnemy") == 0)
-            {
-
-                int posX = cJSON_GetObjectItem(serverReplyCommand, "posX")->valueint;
-                int posY = cJSON_GetObjectItem(serverReplyCommand, "posY")->valueint;
-                updateBulletEnemy(posX, posY);
-
-
-            }
-
-            else if (strcmp(command, "putEnemy"))
-            {
-
 
                 char* type = cJSON_GetObjectItem(serverReplyCommand, "type")->valuestring;
                 int enemyId = cJSON_GetObjectItem(serverReplyCommand, "enemyId")->valueint;
-                void putEnemy(char* type, int enemyId);
+                putEnemy(type, gameId);
             }
 
 
-            else if (strcmp(command, "moveSpacecraft"))
+
+
+            else if (strcmp(command, "deleteEnemy")==0)
             {
 
-                int posX = cJSON_GetObjectItem(serverReplyCommand, "posX")->valueint;
-                int posY = cJSON_GetObjectItem(serverReplyCommand, "posY")->valueint;
-            
 
+                int enemiesId = cJSON_GetObjectItem(serverReplyCommand, "enemyId");
+
+
+
+
+    
             }
+
+
 
 
         }

@@ -34,3 +34,15 @@ void moveShip(int dir)
     sendMovePlayerCommand(ship->posX, ship->posY);
 
 }
+
+
+void updateShipPosition(int posX, int posY)
+{
+
+    if (ship != NULL)
+    {
+
+        ship->posX = posX;
+        ship->posY = posY;
+    }
+}

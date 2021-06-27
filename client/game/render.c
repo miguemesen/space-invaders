@@ -66,10 +66,10 @@ void renderShip(SDL_Renderer *renderer)
 void renderBullet(SDL_Renderer* renderer, Bullet* bullet)
 {
 
-    if (bullet != NULL)
+    if (bullet->isActive)
     {
 
-        SDL_Rect dstrect = {bullet->posX, bullet->posY, bullet->width, bullet->height};
+        SDL_Rect dstrect = {bullet->posX, bullet->posY,RECT_WIDTH_BULLET, RECT_HEIGHT_BULLET};
         SDL_RenderCopy(renderer, bullet->currentTexture, NULL, &dstrect);
 
 
@@ -85,7 +85,7 @@ void renderSpacecraft(SDL_Renderer* renderer)
     if (spacecraft != NULL)
     {
 
-        if(spacecraft->active)
+        if(spacecraft->isActive)
         {
             SDL_Rect dstrect = {spacecraft->posX, spacecraft->posY, RECT_WIDTH_ENEMY, RECT_HEIGHT_ENEMY};
             SDL_RenderCopy(renderer, spacecraft->texture, NULL, &dstrect);
