@@ -117,12 +117,11 @@ _Noreturn void *listen_socket(){
 
 
 
-            else if (strcmp(command, "putEnemy")== 0)
+            else if (strcmp(command, "putEnemies")== 0)
             {
 
-                char* type = cJSON_GetObjectItem(serverReplyCommand, "type")->valuestring;
-                int enemyId = cJSON_GetObjectItem(serverReplyCommand, "enemyId")->valueint;
-                putEnemy(type, gameId);
+                cJSON *enemies = cJSON_GetObjectItem(serverReplyCommand, "enemies");
+                putEnemy(enemies);
             }
 
 

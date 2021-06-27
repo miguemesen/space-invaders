@@ -207,12 +207,13 @@ public class Game {
     }
 
     public void addObserver(ClientHandler observer) throws IOException {
-        this.observers.add(observer);
         try {
             Thread.sleep(3000);
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        this.observers.add(observer);
         //observer.send(Serializer.sendAllGame(gameId,this.canon,this.enemigos,this.enemyBullet,this.playerBullet,this.escudos));
     }
 

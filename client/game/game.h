@@ -47,8 +47,6 @@ int bunkerCollision(int posX, int posY);
 int enemiesCollision(int posX, int posY);
 int shipCollision(int posX, int posY);
 int spacecraftCollision(int posX, int posY);
-void putEnemy(char* type, int enemyId);
-
 
 void sendPutBulletPlayerCommand(int posX, int posY);
 void sendPutBulletEnemyCommand(int posX, int posY);

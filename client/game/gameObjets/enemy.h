@@ -36,7 +36,7 @@ void moveEnemies();
 
 void updateEnemiesPosition(cJSON* enemies);
 
-void putEnemy(char* type, int enemyId);
+void putEnemy(cJSON* enemies);
 
 void deleteEnemy(cJSON* enemies);
 

@@ -59,6 +59,8 @@ void updateEnemiesPosition(cJSON* enemies)
             cJSON * enemy = cJSON_GetArrayItem(enemies, column + temp);
             currentEnemy->posX = cJSON_GetObjectItem(enemy, "posX")->valueint;
             currentEnemy->posY = cJSON_GetObjectItem(enemy, "posY")->valueint;
+            currentEnemy->isActive = cJSON_GetObjectItem(enemy, "isActive")->valueint;
+            printf("isActive %d \n", currentEnemy->isActive);
           
 
         }
@@ -71,29 +73,43 @@ void updateEnemiesPosition(cJSON* enemies)
 }
 
 
-void putEnemy(char* type, int enemyId)
+void putEnemy(cJSON* enemies)
 {
 
+    printf("size %d \n", cJSON_GetArraySize(enemies));
 
-    Enemy* enemy = getEnemyByID(enemyId);
+    for(int i=0; i < cJSON_GetArraySize(enemies); i++)
+    {
 
-    if (strcmp(type, "crab"))
-    {
-        enemy->texture = loadTexture(CRAB_SPRITE_PATH);
-        enemy->type = "crab";
-    }
+        cJSON * enemyJSON = cJSON_GetArrayItem(enemies, i);
 
-    else if (strcmp(type, "octo"))
-    {
-        enemy->texture = loadTexture(OCTO_SPRITE_PATH);
-        enemy->type = "octo";
+
+        int enemyId = cJSON_GetObjectItem(enemyJSON, "enemyId")->valueint;
+        char* enemyType = cJSON_GetObjectItem(enemyJSON, "enemyType")->valuestring;
+
+        
+
+        Enemy* enemy = getEnemyByID(enemyId);
+
+        printf("%d   %s \n", enemy->id, enemyType);
+
+        if (strcmp(enemyType, "crab") == 0)
+        {
+            enemy->texture = loadTexture(CRAB_SPRITE_PATH);
+        }
+
+        else if (strcmp(enemyType, "octo") == 0)
+        {
+            enemy->texture = loadTexture(OCTO_SPRITE_PATH);
+        }
+        else if (strcmp(enemyType, "squid") == 0)
+        {
+            enemy->texture = loadTexture(SQUID_SPRITE_PATH);
+        }
+
+        enemy->type = enemyType;
+        enemy->isActive = 1;
     }
-    else if (strcmp(type, "squid"))
-    {
-        enemy->texture = loadTexture(SQUID_SPRITE_PATH);
-        enemy->type = "squid";
-    }
-    enemy->isActive = 1;
 
 }
 
@@ -145,6 +161,8 @@ Enemy* getEnemyByID(int id)
         }
     
     }
+
+    return NULL;
 
 
 }
