@@ -29,7 +29,14 @@ public class Controller {
 
 
     public void insertarEnemigo(){
+        if (checkBoxJuegoUno.isSelected()){
 
+        }
+        else if (checkBoxJuegoDos.isSelected()){
+
+        } else {
+            System.out.println("No se selecciona el juego que quiere manejar");
+        }
     }
 
     public void iniciarJuego(ActionEvent actionEvent) throws IOException {
@@ -69,6 +76,7 @@ public class Controller {
         tipoEnemigoPulpo.setSelected(false);
         tipoEnemigoCalamar.setSelected(false);
     }
+
 
     public void eliminarEnemigo(ActionEvent actionEvent) {
         if (checkBoxJuegoUno.isSelected()){

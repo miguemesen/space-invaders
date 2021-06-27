@@ -20,7 +20,7 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Button fx:id="botonInsertarEnemigo" layoutX="35.0" layoutY="177.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Insertar" />
+            <Button fx:id="botonInsertarEnemigo" layoutX="35.0" layoutY="177.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Insertar" onAction="#insertarEnemigo"/>
             <Button fx:id="botonEliminar" layoutX="34.0" layoutY="471.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="126.0" text="Eliminar" onAction="#eliminarEnemigo"/>
             <Label layoutX="34.0" layoutY="102.0" text="Tipo enemigo">
                <font>

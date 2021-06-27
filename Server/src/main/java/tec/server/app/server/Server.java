@@ -12,6 +12,10 @@ public class Server extends Thread{
     private static boolean running = true;
     public static Server serverInstance;
 
+    /**
+     * Metodo constructor del server
+     * @param port Puerto donde el server iniciado estara escuchando
+     */
     public Server(Integer port) {
         try {
             server = new ServerSocket(port);
@@ -22,6 +26,11 @@ public class Server extends Thread{
         }
     }
 
+    /**
+     * Singleton para tomar una instancia del server
+     * @param port Puerto donde el server iniciado estara escuchando
+     * @return
+     */
     public static Server getInstance(Integer port){
         if (serverInstance == null){
             serverInstance = new Server(port);
@@ -29,6 +38,9 @@ public class Server extends Thread{
         return serverInstance;
     }
 
+    /**
+     * Metodo overridden de la clase thread para que el server siempre este corriendo
+     */
     @Override
     public void run(){
         while (running){

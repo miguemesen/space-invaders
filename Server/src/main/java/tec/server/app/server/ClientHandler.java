@@ -26,7 +26,11 @@ public class ClientHandler implements Runnable{
     private boolean isActive = true;
 
 
-    // Constructor
+    /**
+     * Metodo constructor de la clase Client Handler, inicia el cliente y lo trata de asignar a un juego
+     * @param client
+     * @throws IOException
+     */
     public ClientHandler(Socket client) throws IOException {
 
         if (games == null) {
@@ -45,13 +49,17 @@ public class ClientHandler implements Runnable{
 
     }
 
+    /**
+     *
+     * @param gameId
+     * @return
+     */
     public static Game getGameById(Integer gameId){
         for (Game game : games){
             if (gameId == game.getGameId())
                 return game;
 
         }
-        System.out.println("Entraaaa");
         return null;
     }
 

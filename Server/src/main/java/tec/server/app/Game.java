@@ -26,6 +26,11 @@ public class Game {
     private Bullet enemyBullet;
     private List<Escudo> escudos;
 
+    /**
+     * Constructor de la clase Game
+     * @param gameId Id del juego que será inicializado
+     * @param player Jugador que llevara el juego
+     */
     public Game(Integer gameId, ClientHandler player){
         this.gameId = gameId;
         this.enemigos = Collections.synchronizedList(new ArrayList<>());
@@ -54,23 +59,38 @@ public class Game {
         return gameId;
     }
 
+    /**
+     * Le indica a los clientes que pueden ser tanto jugador como observadores
+     * que la partida ya inicio
+     * @throws IOException
+     */
     public void iniciarJuego() throws IOException {
         sendClientes(Serializer.startGame(gameId));
     }
 
 
-
+    /**
+     * Recibe los comandos enviados desde el cliente e interpreta que tipo
+     * de informacion es la que envia
+     * @param command Comando que es enviado desde el cliente, una palabra representativa
+     *                de la informacion que viene.
+     * @throws ParseException
+     * @throws IOException
+     */
     public void filterCommand(String command) throws ParseException, IOException {
         JSONObject commandJSON = (JSONObject) jsonParser.parse(command);
         
         if (commandJSON.get("command").equals("movePlayer"))
             this.moverCanon(commandJSON);
-        
-        if (commandJSON.get("command").equals("moveEnemies"))
-            this.moverEnemigo(commandJSON);
 
-        if (commandJSON.get("command").equals("moveBulletEnemy") || commandJSON.get("command").equals("moveBulletPlayer"))
-            this.moverBalas(commandJSON);
+        if (commandJSON.get("command").equals("updateGameState"))
+            this.updateGameState(commandJSON);
+        
+//        if (commandJSON.get("command").equals("moveEnemies"))
+//            this.moverEnemigo(commandJSON);
+
+//        if (commandJSON.get("command").equals("moveBulletEnemy") || commandJSON.get("command").equals("moveBulletPlayer"))
+//            this.moverBalas(commandJSON);
 
         if (commandJSON.get("command").equals("updateBunker"))
             this.actualizarEscudo(commandJSON);
@@ -78,15 +98,25 @@ public class Game {
         if (commandJSON.get("command").equals("attacked"))
             this.attacked(commandJSON);
 
-        if (commandJSON.get("command").equals("putBulletEnemy") || commandJSON.get("command").equals("putBulletPlayer"))
-            this.putBullet(commandJSON);
+//        if (commandJSON.get("command").equals("putBulletEnemy") || commandJSON.get("command").equals("putBulletPlayer"))
+//            this.putBullet(commandJSON);
 
         if (commandJSON.get("command").equals("killEnemy"))
             this.killEnemy(commandJSON);
 
-        if (commandJSON.get("command").equals("moveSpacecraft"))
-            this.moveSpacecraft(commandJSON);
+//        if (commandJSON.get("command").equals("moveSpacecraft"))
+//            this.moveSpacecraft(commandJSON);
     }
+
+    private void updateGameState(JSONObject commandJSON) throws IOException {
+        try {
+            Thread.sleep(20);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        this.sendObservers(commandJSON.toJSONString());
+    }
+
 
     private void moveSpacecraft(JSONObject commandJSON) throws IOException {
         try {

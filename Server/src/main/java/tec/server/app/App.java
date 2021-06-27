@@ -12,6 +12,10 @@ import tec.server.app.server.Server;
  */
 public class App extends Application {
 
+    /**
+     * Metodo principal que abre la venta de administrado e inicia el server
+     * @param stage
+     */
     @Override
     public void start(Stage stage) {
         try {
