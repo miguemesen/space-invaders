@@ -5,7 +5,7 @@ public class Pulpo extends Enemigo{
 
     public Pulpo(Integer id) {
         super(id);
-        this.setTipo(1);
+        this.setTipo("octo");
         this.setPuntaje(40);
     }
 }

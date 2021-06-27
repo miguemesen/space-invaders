@@ -4,7 +4,7 @@ public class Calamar extends Enemigo{
 
     public Calamar(Integer id) {
         super(id);
-        this.setTipo(2);
+        this.setTipo("squid");
         this.setPuntaje(10);
     }
 }

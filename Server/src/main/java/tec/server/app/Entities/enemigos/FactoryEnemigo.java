@@ -4,11 +4,11 @@ public class FactoryEnemigo {
 
     public static Enemigo getEnemigo(String tipo, Integer id){
         switch (tipo) {
-            case "pulpo":
+            case "octo":
                 return new Pulpo(id);
-            case "calamar":
+            case "squid":
                 return new Calamar(id);
-            case "cangrejo":
+            case "crab":
                 return new Cangrejo(id);
             default:
                 return new Platillo(id);

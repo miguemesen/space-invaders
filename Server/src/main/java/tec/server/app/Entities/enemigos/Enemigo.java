@@ -2,7 +2,7 @@ package tec.server.app.Entities.enemigos;
 
 public abstract class Enemigo {
     private Integer id;
-    private Integer tipo; // 1: Pulpo | 2: Calamar | 3: Cangrejo | 4: Platillo
+    private String tipo; // 1: Pulpo | 2: Calamar | 3: Cangrejo | 4: Platillo
     private Integer puntaje;
 
     public Enemigo(Integer id) {
@@ -17,11 +17,11 @@ public abstract class Enemigo {
         this.id = id;
     }
 
-    public Integer getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(Integer tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
