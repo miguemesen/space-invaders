@@ -11,8 +11,11 @@ import java.util.List;
 
 public class Serializer {
 
-
-
+    /**
+     * Avisa al cliente que el juego no se puede accesar
+     * @param gameId Identificador del juego al que el cliente quiere accesar
+     * @return un objeto json en forma de string que lleva la informacion del rechazo
+     */
     public static String gameRejected(Integer gameId){
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("command", "connectionRejected");
@@ -23,7 +26,7 @@ public class Serializer {
     /**
      * Cuando se presiona el boton iniciar juego desde el administrador se llama iniciar juego para que el cliente empiece
      * @param gameId id del juego que se quiere iniciar
-     * @return
+     * @return un objeto json en forma de string que lleva el indicador de iniciar el juego
      */
     public static String startGame(Integer gameId){
         JSONObject jsonObject = new JSONObject();
@@ -32,6 +35,13 @@ public class Serializer {
         return jsonObject.toJSONString();
     }
 
+    /**
+     * Avisa al
+     * @param gameId
+     * @param score
+     * @param lives
+     * @return
+     */
     public static String gameOver(Integer gameId, Integer score, Integer lives){
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("command","gameOver");
