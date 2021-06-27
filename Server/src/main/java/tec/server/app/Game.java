@@ -3,7 +3,11 @@ package tec.server.app;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import tec.server.app.enemigos.Enemigo;
+import tec.server.app.Entities.Bullet;
+import tec.server.app.Entities.Canon;
+import tec.server.app.Entities.Escudo;
+import tec.server.app.Entities.enemigos.Enemigo;
+import tec.server.app.Entities.enemigos.FactoryEnemigo;
 import tec.server.app.server.ClientHandler;
 
 import java.io.IOException;
@@ -18,6 +22,9 @@ public class Game {
     private List<ClientHandler> observers;
     private JSONParser jsonParser;
     private ClientHandler player;
+    private Bullet playerBullet;
+    private Bullet enemyBullet;
+    private List<Escudo> escudos;
 
     public Game(Integer gameId, ClientHandler player){
         this.gameId = gameId;
@@ -26,6 +33,17 @@ public class Game {
         this.observers = Collections.synchronizedList(new ArrayList<>());
         this.jsonParser = new JSONParser();
         this.player = player;
+        this.escudos = new ArrayList<>();
+        for (int i = 1; i<4; i++)
+            this.escudos.add(new Escudo(i));
+    }
+
+    public List<Enemigo> getEnemigos() {
+        return enemigos;
+    }
+
+    public Integer getNumberObservers(){
+        return this.observers.size();
     }
 
     public ClientHandler getPlayer() {
@@ -37,14 +55,135 @@ public class Game {
     }
 
     public void iniciarJuego() throws IOException {
-        player.send(Serializer.startGame(gameId));
+        sendClientes(Serializer.startGame(gameId));
     }
 
 
 
     public void filterCommand(String command) throws ParseException, IOException {
         JSONObject commandJSON = (JSONObject) jsonParser.parse(command);
+        
+        if (commandJSON.get("command").equals("movePlayer"))
+            this.moverCanon(commandJSON);
+        
+        if (commandJSON.get("command").equals("moveEnemies"))
+            this.moverEnemigo(commandJSON);
 
+        if (commandJSON.get("command").equals("moveBulletEnemy") || commandJSON.get("command").equals("moveBulletPlayer"))
+            this.moverBalas(commandJSON);
+
+        if (commandJSON.get("command").equals("updateBunker"))
+            this.actualizarEscudo(commandJSON);
+
+        if (commandJSON.get("command").equals("attacked"))
+            this.attacked(commandJSON);
+
+        if (commandJSON.get("command").equals("putBulletEnemy") || commandJSON.get("command").equals("putBulletPlayer"))
+            this.putBullet(commandJSON);
+
+        if (commandJSON.get("command").equals("killEnemy"))
+            this.killEnemy(commandJSON);
+
+        if (commandJSON.get("command").equals("moveSpacecraft"))
+            this.moveSpacecraft(commandJSON);
+    }
+
+    private void moveSpacecraft(JSONObject commandJSON) throws IOException {
+        try {
+            Thread.sleep(20);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        this.sendObservers(commandJSON.toJSONString());
+    }
+
+    private void killEnemy(JSONObject commandJSON) throws IOException {
+        Integer enemyId = Integer.parseInt(commandJSON.get("id").toString());
+        String enemyType = commandJSON.get("type").toString();
+
+        Enemigo enemigo = FactoryEnemigo.getEnemigo(enemyType,enemyId);
+        this.canon.aumentarPuntaje(enemigo.getPuntaje());
+
+        sendClientes(Serializer.updateScore(this.gameId,this.canon.getPuntaje()));
+    }
+
+    private void putBullet(JSONObject commandJSON) throws IOException {
+        try {
+            Thread.sleep(20);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        this.sendObservers(commandJSON.toJSONString());
+    }
+
+    private void attacked(JSONObject commandJSON) throws IOException {
+        this.canon.reducirVida();
+
+        if (this.canon.getVidas() == 0){
+            this.gameOver();
+        } else {
+            this.sendClientes(Serializer.updateLives(this.gameId,this.canon.getVidas()));
+        }
+    }
+
+    public void sendClientes(String command) throws IOException {
+        if (player != null){
+            player.send(command);
+            sendObservers(command);
+        }
+    }
+
+    private void actualizarEscudo(JSONObject commandJSON) throws IOException {
+        try {
+            Thread.sleep(20);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        this.sendObservers(commandJSON.toJSONString());
+    }
+
+    private void moverBalas(JSONObject commandJSON) throws IOException {
+        try {
+            Thread.sleep(20);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        this.sendObservers(commandJSON.toJSONString());
+    }
+
+    private void moverEnemigo(JSONObject commandJSON) throws IOException {
+        try {
+            Thread.sleep(20);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        this.sendObservers(commandJSON.toJSONString());
+    }
+
+    private void moverCanon(JSONObject commandJSON) throws IOException {
+        Integer posX = Integer.parseInt(commandJSON.get("posX").toString());
+        Integer posY = Integer.parseInt(commandJSON.get("posY").toString());
+        this.canon.setPosX(posX);
+        this.canon.setPosY(posY);
+        this.sendObservers(commandJSON.toJSONString());
+    }
+
+    public void sendObservers(String command) throws IOException {
+        if (player != null){
+            for (ClientHandler observer : observers){
+                observer.send(command);
+            }
+        }
+    }
+
+    public void addObserver(ClientHandler observer) throws IOException {
+        this.observers.add(observer);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        observer.send(Serializer.sendAllGame(gameId,this.canon,this.enemigos,this.enemyBullet,this.playerBullet,this.escudos));
     }
 
     public void removeObserver(ClientHandler clientHandler) {

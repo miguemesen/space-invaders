@@ -13,6 +13,7 @@ import tec.server.app.Serializer;
 
 public class ClientHandler implements Runnable{
 
+    private final Integer MAX_NUM_OF_OBSERVERS = 2;
     private final Integer MAX_GAMES = 2;
     private final Socket clientSocket;
     private JSONParser jsonParser;
@@ -124,7 +125,11 @@ public class ClientHandler implements Runnable{
                 if (command.equals("newGame")){ // El cliente pide crear un nuevo juego
                     this.newGameHandler(responseJson);
 
-                } else { // No se entiende el comando enviado, por lo que es un comando para el juego
+                } 
+                if (command.equals("observer")){
+                    this.observerHandler(responseJson);
+                }
+                else { // No se entiende el comando enviado, por lo que es un comando para el juego
                     game.filterCommand(response);
                 }
             }
@@ -145,6 +150,21 @@ public class ClientHandler implements Runnable{
             }
             catch (IOException e) {
                 e.printStackTrace();
+            }
+        }
+    }
+
+    private void observerHandler(JSONObject responseJson) throws IOException {
+        Integer gameId = Integer.parseInt(responseJson.get("gameId").toString());
+
+        for (Game game : games){
+            if (game.getGameId() == gameId){
+                if (game.getNumberObservers() < MAX_NUM_OF_OBSERVERS){
+                    this.game = game;
+                    game.addObserver(this);
+                } else {
+                    send(Serializer.gameRejected(gameId));
+                }
             }
         }
     }

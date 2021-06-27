@@ -1,4 +1,4 @@
-package tec.server.app.enemigos;
+package tec.server.app.Entities.enemigos;
 
 public class Cangrejo extends Enemigo{
     public Cangrejo(Integer id) {

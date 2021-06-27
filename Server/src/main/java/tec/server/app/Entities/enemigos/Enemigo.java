@@ -1,4 +1,4 @@
-package tec.server.app.enemigos;
+package tec.server.app.Entities.enemigos;
 
 public abstract class Enemigo {
     private Integer id;
@@ -9,6 +9,13 @@ public abstract class Enemigo {
         this.id = id;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Integer getTipo() {
         return tipo;

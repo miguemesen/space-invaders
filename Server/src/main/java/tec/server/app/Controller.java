@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
+import tec.server.app.Entities.enemigos.Enemigo;
 import tec.server.app.server.ClientHandler;
 
 import java.io.IOException;
@@ -50,6 +51,10 @@ public class Controller {
         checkBoxJuegoUno.setSelected(false);
     }
 
+    public void isCheckedEliminarTodos(ActionEvent actionEvent) {
+        insertarEnemigoPosicion.clear();
+    }
+
     public void isCheckedPulpo(ActionEvent actionEvent) {
         tipoEnemigoCalamar.setSelected(false);
         tipoEnemigoCangrejo.setSelected(false);
@@ -64,4 +69,14 @@ public class Controller {
         tipoEnemigoPulpo.setSelected(false);
         tipoEnemigoCalamar.setSelected(false);
     }
+
+    public void eliminarEnemigo(ActionEvent actionEvent) {
+        if (checkBoxJuegoUno.isSelected()){
+            if (todosEliminar.isSelected()){
+                ClientHandler.getGameById(1).getEnemigos();
+            }
+        }
+    }
+
+
 }

@@ -1,4 +1,4 @@
-package tec.server.app;
+package tec.server.app.Entities;
 
 public class Canon {
     private Integer vidas;
@@ -9,6 +9,18 @@ public class Canon {
     public Canon(){
         this.vidas = 3;
         this.puntaje = 0;
+    }
+
+    public void aumentarPuntaje(Integer puntos){
+        puntaje+=puntos;
+    }
+
+    public void reducirVida(){
+        vidas--;
+    }
+
+    public void aumentarVida(){
+        vidas++;
     }
 
     public Integer getPosX() {
