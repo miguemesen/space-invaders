@@ -106,8 +106,23 @@ public class Game {
         if (commandJSON.get("command").equals("killEnemy"))
             this.killEnemy(commandJSON);
 
+        if (commandJSON.get("command").equals("win"))
+            this.win(commandJSON);
+
+
 //        if (commandJSON.get("command").equals("moveSpacecraft"))
 //            this.moveSpacecraft(commandJSON);
+    }
+
+    private void win(JSONObject commandJSON) throws IOException {
+        this.canon.aumentarVida();
+        try {
+            Thread.sleep(20);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        this.sendClientes(Serializer.updateLives(this.gameId,this.canon.getVidas()));
     }
 
     private void updateGameState(JSONObject commandJSON) throws IOException {
