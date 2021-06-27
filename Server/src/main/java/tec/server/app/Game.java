@@ -109,6 +109,9 @@ public class Game {
         if (commandJSON.get("command").equals("killEnemy"))
             this.killEnemy(commandJSON);
 
+        if (commandJSON.get("command").equals("enemyImpact"))
+            this.enemyImpact();
+
         if (commandJSON.get("command").equals("win"))
             this.win(commandJSON);
 
@@ -117,6 +120,10 @@ public class Game {
 
 //        if (commandJSON.get("command").equals("moveSpacecraft"))
 //            this.moveSpacecraft(commandJSON);
+    }
+
+    private void enemyImpact() throws IOException {
+        this.gameOver();
     }
 
     private void killSpacecraft(JSONObject commandJSON) throws IOException {
