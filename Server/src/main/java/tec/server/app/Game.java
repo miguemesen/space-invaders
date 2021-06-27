@@ -43,6 +43,8 @@ public class Game {
             this.escudos.add(new Escudo(i));
     }
 
+
+
     public List<Enemigo> getEnemigos() {
         return enemigos;
     }
