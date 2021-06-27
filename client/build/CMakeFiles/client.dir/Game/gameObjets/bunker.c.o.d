@@ -1,7 +1,7 @@
 CMakeFiles/client.dir/Game/gameObjets/bunker.c.o: \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/bunker.c \
+ /home/sebasmora/Desktop/space-invaders/client/Game/gameObjets/bunker.c \
  /usr/include/stdc-predef.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/bunker.h \
+ /home/sebasmora/Desktop/space-invaders/client/Game/gameObjets/bunker.h \
  /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
  /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
  /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
@@ -141,4 +141,4 @@ CMakeFiles/client.dir/Game/gameObjets/bunker.c.o: \
  /usr/include/SDL2/SDL_system.h /usr/include/SDL2/SDL_timer.h \
  /usr/include/SDL2/SDL_version.h /usr/include/SDL2/SDL_image.h \
  /usr/include/SDL2/SDL.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/../../constants.h
+ /home/sebasmora/Desktop/space-invaders/client/Game/gameObjets/../../constants.h

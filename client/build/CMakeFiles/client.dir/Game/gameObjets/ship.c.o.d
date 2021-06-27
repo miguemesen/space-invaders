@@ -1,7 +1,7 @@
 CMakeFiles/client.dir/Game/gameObjets/ship.c.o: \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/ship.c \
+ /home/sebasmora/Desktop/space-invaders/client/Game/gameObjets/ship.c \
  /usr/include/stdc-predef.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/ship.h \
+ /home/sebasmora/Desktop/space-invaders/client/Game/gameObjets/ship.h \
  /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
  /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
  /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
@@ -140,4 +140,4 @@ CMakeFiles/client.dir/Game/gameObjets/ship.c.o: \
  /usr/include/SDL2/SDL_render.h /usr/include/SDL2/SDL_shape.h \
  /usr/include/SDL2/SDL_system.h /usr/include/SDL2/SDL_timer.h \
  /usr/include/SDL2/SDL_version.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/../../constants.h
+ /home/sebasmora/Desktop/space-invaders/client/Game/gameObjets/../../constants.h

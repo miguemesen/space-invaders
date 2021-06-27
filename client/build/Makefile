@@ -57,10 +57,10 @@ RM = /snap/cmake/888/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sebasmora/Desktop/cacaInvaderss
+CMAKE_SOURCE_DIR = /home/sebasmora/Desktop/space-invaders/client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sebasmora/Desktop/cacaInvaderss/build
+CMAKE_BINARY_DIR = /home/sebasmora/Desktop/space-invaders/client/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebasmora/Desktop/cacaInvaderss/build/CMakeFiles /home/sebasmora/Desktop/cacaInvaderss/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebasmora/Desktop/space-invaders/client/build/CMakeFiles /home/sebasmora/Desktop/space-invaders/client/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebasmora/Desktop/cacaInvaderss/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sebasmora/Desktop/space-invaders/client/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,221 +129,197 @@ client/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
 .PHONY : client/fast
 
-Game/collisions.o: Game/collisions.c.o
-.PHONY : Game/collisions.o
+game/game.o: game/game.c.o
+.PHONY : game/game.o
 
 # target to build an object file
-Game/collisions.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/collisions.c.o
-.PHONY : Game/collisions.c.o
+game/game.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/game.c.o
+.PHONY : game/game.c.o
 
-Game/collisions.i: Game/collisions.c.i
-.PHONY : Game/collisions.i
+game/game.i: game/game.c.i
+.PHONY : game/game.i
 
 # target to preprocess a source file
-Game/collisions.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/collisions.c.i
-.PHONY : Game/collisions.c.i
+game/game.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/game.c.i
+.PHONY : game/game.c.i
 
-Game/collisions.s: Game/collisions.c.s
-.PHONY : Game/collisions.s
+game/game.s: game/game.c.s
+.PHONY : game/game.s
 
 # target to generate assembly for a file
-Game/collisions.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/collisions.c.s
-.PHONY : Game/collisions.c.s
+game/game.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/game.c.s
+.PHONY : game/game.c.s
 
-Game/game.o: Game/game.c.o
-.PHONY : Game/game.o
+game/gameObjets/bullet.o: game/gameObjets/bullet.c.o
+.PHONY : game/gameObjets/bullet.o
 
 # target to build an object file
-Game/game.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/game.c.o
-.PHONY : Game/game.c.o
+game/gameObjets/bullet.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/gameObjets/bullet.c.o
+.PHONY : game/gameObjets/bullet.c.o
 
-Game/game.i: Game/game.c.i
-.PHONY : Game/game.i
+game/gameObjets/bullet.i: game/gameObjets/bullet.c.i
+.PHONY : game/gameObjets/bullet.i
 
 # target to preprocess a source file
-Game/game.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/game.c.i
-.PHONY : Game/game.c.i
+game/gameObjets/bullet.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/gameObjets/bullet.c.i
+.PHONY : game/gameObjets/bullet.c.i
 
-Game/game.s: Game/game.c.s
-.PHONY : Game/game.s
+game/gameObjets/bullet.s: game/gameObjets/bullet.c.s
+.PHONY : game/gameObjets/bullet.s
 
 # target to generate assembly for a file
-Game/game.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/game.c.s
-.PHONY : Game/game.c.s
+game/gameObjets/bullet.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/gameObjets/bullet.c.s
+.PHONY : game/gameObjets/bullet.c.s
 
-Game/gameObjets/bullet.o: Game/gameObjets/bullet.c.o
-.PHONY : Game/gameObjets/bullet.o
+game/gameObjets/bunker.o: game/gameObjets/bunker.c.o
+.PHONY : game/gameObjets/bunker.o
 
 # target to build an object file
-Game/gameObjets/bullet.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/gameObjets/bullet.c.o
-.PHONY : Game/gameObjets/bullet.c.o
+game/gameObjets/bunker.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/gameObjets/bunker.c.o
+.PHONY : game/gameObjets/bunker.c.o
 
-Game/gameObjets/bullet.i: Game/gameObjets/bullet.c.i
-.PHONY : Game/gameObjets/bullet.i
+game/gameObjets/bunker.i: game/gameObjets/bunker.c.i
+.PHONY : game/gameObjets/bunker.i
 
 # target to preprocess a source file
-Game/gameObjets/bullet.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/gameObjets/bullet.c.i
-.PHONY : Game/gameObjets/bullet.c.i
+game/gameObjets/bunker.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/gameObjets/bunker.c.i
+.PHONY : game/gameObjets/bunker.c.i
 
-Game/gameObjets/bullet.s: Game/gameObjets/bullet.c.s
-.PHONY : Game/gameObjets/bullet.s
+game/gameObjets/bunker.s: game/gameObjets/bunker.c.s
+.PHONY : game/gameObjets/bunker.s
 
 # target to generate assembly for a file
-Game/gameObjets/bullet.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/gameObjets/bullet.c.s
-.PHONY : Game/gameObjets/bullet.c.s
+game/gameObjets/bunker.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/gameObjets/bunker.c.s
+.PHONY : game/gameObjets/bunker.c.s
 
-Game/gameObjets/bunker.o: Game/gameObjets/bunker.c.o
-.PHONY : Game/gameObjets/bunker.o
+game/gameObjets/enemy.o: game/gameObjets/enemy.c.o
+.PHONY : game/gameObjets/enemy.o
 
 # target to build an object file
-Game/gameObjets/bunker.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/gameObjets/bunker.c.o
-.PHONY : Game/gameObjets/bunker.c.o
+game/gameObjets/enemy.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/gameObjets/enemy.c.o
+.PHONY : game/gameObjets/enemy.c.o
 
-Game/gameObjets/bunker.i: Game/gameObjets/bunker.c.i
-.PHONY : Game/gameObjets/bunker.i
+game/gameObjets/enemy.i: game/gameObjets/enemy.c.i
+.PHONY : game/gameObjets/enemy.i
 
 # target to preprocess a source file
-Game/gameObjets/bunker.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/gameObjets/bunker.c.i
-.PHONY : Game/gameObjets/bunker.c.i
+game/gameObjets/enemy.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/gameObjets/enemy.c.i
+.PHONY : game/gameObjets/enemy.c.i
 
-Game/gameObjets/bunker.s: Game/gameObjets/bunker.c.s
-.PHONY : Game/gameObjets/bunker.s
+game/gameObjets/enemy.s: game/gameObjets/enemy.c.s
+.PHONY : game/gameObjets/enemy.s
 
 # target to generate assembly for a file
-Game/gameObjets/bunker.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/gameObjets/bunker.c.s
-.PHONY : Game/gameObjets/bunker.c.s
+game/gameObjets/enemy.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/gameObjets/enemy.c.s
+.PHONY : game/gameObjets/enemy.c.s
 
-Game/gameObjets/enemy.o: Game/gameObjets/enemy.c.o
-.PHONY : Game/gameObjets/enemy.o
+game/gameObjets/ship.o: game/gameObjets/ship.c.o
+.PHONY : game/gameObjets/ship.o
 
 # target to build an object file
-Game/gameObjets/enemy.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/gameObjets/enemy.c.o
-.PHONY : Game/gameObjets/enemy.c.o
+game/gameObjets/ship.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/gameObjets/ship.c.o
+.PHONY : game/gameObjets/ship.c.o
 
-Game/gameObjets/enemy.i: Game/gameObjets/enemy.c.i
-.PHONY : Game/gameObjets/enemy.i
+game/gameObjets/ship.i: game/gameObjets/ship.c.i
+.PHONY : game/gameObjets/ship.i
 
 # target to preprocess a source file
-Game/gameObjets/enemy.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/gameObjets/enemy.c.i
-.PHONY : Game/gameObjets/enemy.c.i
+game/gameObjets/ship.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/gameObjets/ship.c.i
+.PHONY : game/gameObjets/ship.c.i
 
-Game/gameObjets/enemy.s: Game/gameObjets/enemy.c.s
-.PHONY : Game/gameObjets/enemy.s
+game/gameObjets/ship.s: game/gameObjets/ship.c.s
+.PHONY : game/gameObjets/ship.s
 
 # target to generate assembly for a file
-Game/gameObjets/enemy.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/gameObjets/enemy.c.s
-.PHONY : Game/gameObjets/enemy.c.s
+game/gameObjets/ship.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/gameObjets/ship.c.s
+.PHONY : game/gameObjets/ship.c.s
 
-Game/gameObjets/ship.o: Game/gameObjets/ship.c.o
-.PHONY : Game/gameObjets/ship.o
+game/gameObjets/spacecraft.o: game/gameObjets/spacecraft.c.o
+.PHONY : game/gameObjets/spacecraft.o
 
 # target to build an object file
-Game/gameObjets/ship.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/gameObjets/ship.c.o
-.PHONY : Game/gameObjets/ship.c.o
+game/gameObjets/spacecraft.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/gameObjets/spacecraft.c.o
+.PHONY : game/gameObjets/spacecraft.c.o
 
-Game/gameObjets/ship.i: Game/gameObjets/ship.c.i
-.PHONY : Game/gameObjets/ship.i
+game/gameObjets/spacecraft.i: game/gameObjets/spacecraft.c.i
+.PHONY : game/gameObjets/spacecraft.i
 
 # target to preprocess a source file
-Game/gameObjets/ship.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/gameObjets/ship.c.i
-.PHONY : Game/gameObjets/ship.c.i
+game/gameObjets/spacecraft.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/gameObjets/spacecraft.c.i
+.PHONY : game/gameObjets/spacecraft.c.i
 
-Game/gameObjets/ship.s: Game/gameObjets/ship.c.s
-.PHONY : Game/gameObjets/ship.s
+game/gameObjets/spacecraft.s: game/gameObjets/spacecraft.c.s
+.PHONY : game/gameObjets/spacecraft.s
 
 # target to generate assembly for a file
-Game/gameObjets/ship.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/gameObjets/ship.c.s
-.PHONY : Game/gameObjets/ship.c.s
+game/gameObjets/spacecraft.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/gameObjets/spacecraft.c.s
+.PHONY : game/gameObjets/spacecraft.c.s
 
-Game/gameObjets/spacecraft.o: Game/gameObjets/spacecraft.c.o
-.PHONY : Game/gameObjets/spacecraft.o
+game/render.o: game/render.c.o
+.PHONY : game/render.o
 
 # target to build an object file
-Game/gameObjets/spacecraft.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.o
-.PHONY : Game/gameObjets/spacecraft.c.o
+game/render.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/render.c.o
+.PHONY : game/render.c.o
 
-Game/gameObjets/spacecraft.i: Game/gameObjets/spacecraft.c.i
-.PHONY : Game/gameObjets/spacecraft.i
+game/render.i: game/render.c.i
+.PHONY : game/render.i
 
 # target to preprocess a source file
-Game/gameObjets/spacecraft.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.i
-.PHONY : Game/gameObjets/spacecraft.c.i
+game/render.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/render.c.i
+.PHONY : game/render.c.i
 
-Game/gameObjets/spacecraft.s: Game/gameObjets/spacecraft.c.s
-.PHONY : Game/gameObjets/spacecraft.s
+game/render.s: game/render.c.s
+.PHONY : game/render.s
 
 # target to generate assembly for a file
-Game/gameObjets/spacecraft.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.s
-.PHONY : Game/gameObjets/spacecraft.c.s
+game/render.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/render.c.s
+.PHONY : game/render.c.s
 
-Game/render.o: Game/render.c.o
-.PHONY : Game/render.o
+game/util.o: game/util.c.o
+.PHONY : game/util.o
 
 # target to build an object file
-Game/render.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/render.c.o
-.PHONY : Game/render.c.o
+game/util.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/util.c.o
+.PHONY : game/util.c.o
 
-Game/render.i: Game/render.c.i
-.PHONY : Game/render.i
-
-# target to preprocess a source file
-Game/render.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/render.c.i
-.PHONY : Game/render.c.i
-
-Game/render.s: Game/render.c.s
-.PHONY : Game/render.s
-
-# target to generate assembly for a file
-Game/render.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/render.c.s
-.PHONY : Game/render.c.s
-
-Game/util.o: Game/util.c.o
-.PHONY : Game/util.o
-
-# target to build an object file
-Game/util.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/util.c.o
-.PHONY : Game/util.c.o
-
-Game/util.i: Game/util.c.i
-.PHONY : Game/util.i
+game/util.i: game/util.c.i
+.PHONY : game/util.i
 
 # target to preprocess a source file
-Game/util.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/util.c.i
-.PHONY : Game/util.c.i
+game/util.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/util.c.i
+.PHONY : game/util.c.i
 
-Game/util.s: Game/util.c.s
-.PHONY : Game/util.s
+game/util.s: game/util.c.s
+.PHONY : game/util.s
 
 # target to generate assembly for a file
-Game/util.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Game/util.c.s
-.PHONY : Game/util.c.s
+game/util.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/game/util.c.s
+.PHONY : game/util.c.s
 
 main.o: main.c.o
 .PHONY : main.o
@@ -369,6 +345,78 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main.c.s
 .PHONY : main.c.s
 
+socket/cJson.o: socket/cJson.c.o
+.PHONY : socket/cJson.o
+
+# target to build an object file
+socket/cJson.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/socket/cJson.c.o
+.PHONY : socket/cJson.c.o
+
+socket/cJson.i: socket/cJson.c.i
+.PHONY : socket/cJson.i
+
+# target to preprocess a source file
+socket/cJson.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/socket/cJson.c.i
+.PHONY : socket/cJson.c.i
+
+socket/cJson.s: socket/cJson.c.s
+.PHONY : socket/cJson.s
+
+# target to generate assembly for a file
+socket/cJson.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/socket/cJson.c.s
+.PHONY : socket/cJson.c.s
+
+socket/serializer.o: socket/serializer.c.o
+.PHONY : socket/serializer.o
+
+# target to build an object file
+socket/serializer.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/socket/serializer.c.o
+.PHONY : socket/serializer.c.o
+
+socket/serializer.i: socket/serializer.c.i
+.PHONY : socket/serializer.i
+
+# target to preprocess a source file
+socket/serializer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/socket/serializer.c.i
+.PHONY : socket/serializer.c.i
+
+socket/serializer.s: socket/serializer.c.s
+.PHONY : socket/serializer.s
+
+# target to generate assembly for a file
+socket/serializer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/socket/serializer.c.s
+.PHONY : socket/serializer.c.s
+
+socket/socketClient.o: socket/socketClient.c.o
+.PHONY : socket/socketClient.o
+
+# target to build an object file
+socket/socketClient.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/socket/socketClient.c.o
+.PHONY : socket/socketClient.c.o
+
+socket/socketClient.i: socket/socketClient.c.i
+.PHONY : socket/socketClient.i
+
+# target to preprocess a source file
+socket/socketClient.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/socket/socketClient.c.i
+.PHONY : socket/socketClient.c.i
+
+socket/socketClient.s: socket/socketClient.c.s
+.PHONY : socket/socketClient.s
+
+# target to generate assembly for a file
+socket/socketClient.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/socket/socketClient.c.s
+.PHONY : socket/socketClient.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -378,36 +426,42 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... client"
-	@echo "... Game/collisions.o"
-	@echo "... Game/collisions.i"
-	@echo "... Game/collisions.s"
-	@echo "... Game/game.o"
-	@echo "... Game/game.i"
-	@echo "... Game/game.s"
-	@echo "... Game/gameObjets/bullet.o"
-	@echo "... Game/gameObjets/bullet.i"
-	@echo "... Game/gameObjets/bullet.s"
-	@echo "... Game/gameObjets/bunker.o"
-	@echo "... Game/gameObjets/bunker.i"
-	@echo "... Game/gameObjets/bunker.s"
-	@echo "... Game/gameObjets/enemy.o"
-	@echo "... Game/gameObjets/enemy.i"
-	@echo "... Game/gameObjets/enemy.s"
-	@echo "... Game/gameObjets/ship.o"
-	@echo "... Game/gameObjets/ship.i"
-	@echo "... Game/gameObjets/ship.s"
-	@echo "... Game/gameObjets/spacecraft.o"
-	@echo "... Game/gameObjets/spacecraft.i"
-	@echo "... Game/gameObjets/spacecraft.s"
-	@echo "... Game/render.o"
-	@echo "... Game/render.i"
-	@echo "... Game/render.s"
-	@echo "... Game/util.o"
-	@echo "... Game/util.i"
-	@echo "... Game/util.s"
+	@echo "... game/game.o"
+	@echo "... game/game.i"
+	@echo "... game/game.s"
+	@echo "... game/gameObjets/bullet.o"
+	@echo "... game/gameObjets/bullet.i"
+	@echo "... game/gameObjets/bullet.s"
+	@echo "... game/gameObjets/bunker.o"
+	@echo "... game/gameObjets/bunker.i"
+	@echo "... game/gameObjets/bunker.s"
+	@echo "... game/gameObjets/enemy.o"
+	@echo "... game/gameObjets/enemy.i"
+	@echo "... game/gameObjets/enemy.s"
+	@echo "... game/gameObjets/ship.o"
+	@echo "... game/gameObjets/ship.i"
+	@echo "... game/gameObjets/ship.s"
+	@echo "... game/gameObjets/spacecraft.o"
+	@echo "... game/gameObjets/spacecraft.i"
+	@echo "... game/gameObjets/spacecraft.s"
+	@echo "... game/render.o"
+	@echo "... game/render.i"
+	@echo "... game/render.s"
+	@echo "... game/util.o"
+	@echo "... game/util.i"
+	@echo "... game/util.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... socket/cJson.o"
+	@echo "... socket/cJson.i"
+	@echo "... socket/cJson.s"
+	@echo "... socket/serializer.o"
+	@echo "... socket/serializer.i"
+	@echo "... socket/serializer.s"
+	@echo "... socket/socketClient.o"
+	@echo "... socket/socketClient.i"
+	@echo "... socket/socketClient.s"
 .PHONY : help
 
 

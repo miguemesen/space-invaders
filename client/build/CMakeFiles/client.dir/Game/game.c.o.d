@@ -1,5 +1,5 @@
 CMakeFiles/client.dir/Game/game.c.o: \
- /home/sebasmora/Desktop/cacaInvaderss/Game/game.c \
+ /home/sebasmora/Desktop/space-invaders/client/Game/game.c \
  /usr/include/stdc-predef.h /usr/include/slcurses.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -26,7 +26,7 @@ CMakeFiles/client.dir/Game/game.c.o: \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/game.h \
+ /home/sebasmora/Desktop/space-invaders/client/Game/game.h \
  /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
  /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
  /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
@@ -146,19 +146,19 @@ CMakeFiles/client.dir/Game/game.c.o: \
  /usr/include/SDL2/SDL_system.h /usr/include/SDL2/SDL_timer.h \
  /usr/include/SDL2/SDL_version.h /usr/include/SDL2/SDL_image.h \
  /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_ttf.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/ship.h \
+ /home/sebasmora/Desktop/space-invaders/client/Game/gameObjets/ship.h \
  /usr/include/SDL2/SDL.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/../../constants.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/../constants.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/render.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/bullet.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/bunker.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/enemy.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/bullet.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/../util.h \
+ /home/sebasmora/Desktop/space-invaders/client/Game/gameObjets/../../constants.h \
+ /home/sebasmora/Desktop/space-invaders/client/Game/../constants.h \
+ /home/sebasmora/Desktop/space-invaders/client/Game/render.h \
+ /home/sebasmora/Desktop/space-invaders/client/Game/gameObjets/bullet.h \
+ /home/sebasmora/Desktop/space-invaders/client/Game/gameObjets/bunker.h \
+ /home/sebasmora/Desktop/space-invaders/client/Game/gameObjets/enemy.h \
+ /home/sebasmora/Desktop/space-invaders/client/Game/gameObjets/bullet.h \
+ /home/sebasmora/Desktop/space-invaders/client/Game/gameObjets/../util.h \
  /usr/include/time.h /usr/include/x86_64-linux-gnu/bits/time.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/spacecraft.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/collisions.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/util.h
+ /home/sebasmora/Desktop/space-invaders/client/Game/gameObjets/spacecraft.h \
+ /home/sebasmora/Desktop/space-invaders/client/Game/collisions.h \
+ /home/sebasmora/Desktop/space-invaders/client/Game/util.h

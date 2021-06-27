@@ -1,6 +1,7 @@
 CMakeFiles/client.dir/main.c.o: \
- /home/sebasmora/Desktop/cacaInvaderss/main.c /usr/include/stdc-predef.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/game.h \
+ /home/sebasmora/Desktop/space-invaders/client/main.c \
+ /usr/include/stdc-predef.h \
+ /home/sebasmora/Desktop/space-invaders/client/game/game.h \
  /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_main.h \
  /usr/include/SDL2/SDL_stdinc.h /usr/include/SDL2/SDL_config.h \
  /usr/include/SDL2/SDL_platform.h /usr/include/SDL2/begin_code.h \
@@ -140,19 +141,47 @@ CMakeFiles/client.dir/main.c.o: \
  /usr/include/SDL2/SDL_system.h /usr/include/SDL2/SDL_timer.h \
  /usr/include/SDL2/SDL_version.h /usr/include/SDL2/SDL_image.h \
  /usr/include/SDL2/SDL.h /usr/include/SDL2/SDL_ttf.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/ship.h \
+ /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/ship.h \
  /usr/include/SDL2/SDL.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/../../constants.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/../constants.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/render.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/bullet.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/bunker.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/enemy.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/bullet.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/../util.h \
+ /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/../../constants.h \
+ /home/sebasmora/Desktop/space-invaders/client/game/../constants.h \
+ /home/sebasmora/Desktop/space-invaders/client/game/render.h \
+ /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/bullet.h \
+ /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/bunker.h \
+ /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/../../socket/cJson.h \
+ /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/enemy.h \
+ /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/bullet.h \
+ /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/../util.h \
  /usr/include/time.h /usr/include/x86_64-linux-gnu/bits/time.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/spacecraft.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/collisions.h \
- /home/sebasmora/Desktop/cacaInvaderss/Game/util.h
+ /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/spacecraft.h \
+ /home/sebasmora/Desktop/space-invaders/client/game/util.h \
+ /home/sebasmora/Desktop/space-invaders/client/socket/socketClient.h \
+ /usr/include/x86_64-linux-gnu/sys/socket.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
+ /usr/include/x86_64-linux-gnu/bits/socket.h \
+ /usr/include/x86_64-linux-gnu/bits/socket_type.h \
+ /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
+ /usr/include/x86_64-linux-gnu/asm/socket.h \
+ /usr/include/asm-generic/socket.h \
+ /usr/include/x86_64-linux-gnu/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
+ /usr/include/x86_64-linux-gnu/bits/socket2.h /usr/include/arpa/inet.h \
+ /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/bits/in.h \
+ /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd.h \
+ /home/sebasmora/Desktop/space-invaders/client/socket/../constants.h \
+ /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+ /home/sebasmora/Desktop/space-invaders/client/socket/cJson.h \
+ /home/sebasmora/Desktop/space-invaders/client/socket/../game/game.h \
+ /home/sebasmora/Desktop/space-invaders/client/socket/serializer.h \
+ /home/sebasmora/Desktop/space-invaders/client/socket/socketClient.h

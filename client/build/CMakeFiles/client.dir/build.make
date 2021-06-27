@@ -53,10 +53,10 @@ RM = /snap/cmake/888/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sebasmora/Desktop/cacaInvaderss
+CMAKE_SOURCE_DIR = /home/sebasmora/Desktop/space-invaders/client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sebasmora/Desktop/cacaInvaderss/build
+CMAKE_BINARY_DIR = /home/sebasmora/Desktop/space-invaders/client/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/client.dir/depend.make
@@ -72,172 +72,204 @@ include CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/main.c.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/main.c.o: ../main.c
 CMakeFiles/client.dir/main.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/cacaInvaderss/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/client.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/main.c.o -MF CMakeFiles/client.dir/main.c.o.d -o CMakeFiles/client.dir/main.c.o -c /home/sebasmora/Desktop/cacaInvaderss/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/space-invaders/client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/client.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/main.c.o -MF CMakeFiles/client.dir/main.c.o.d -o CMakeFiles/client.dir/main.c.o -c /home/sebasmora/Desktop/space-invaders/client/main.c
 
 CMakeFiles/client.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/cacaInvaderss/main.c > CMakeFiles/client.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/space-invaders/client/main.c > CMakeFiles/client.dir/main.c.i
 
 CMakeFiles/client.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/cacaInvaderss/main.c -o CMakeFiles/client.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/space-invaders/client/main.c -o CMakeFiles/client.dir/main.c.s
 
-CMakeFiles/client.dir/Game/game.c.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/Game/game.c.o: ../Game/game.c
-CMakeFiles/client.dir/Game/game.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/cacaInvaderss/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/client.dir/Game/game.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/Game/game.c.o -MF CMakeFiles/client.dir/Game/game.c.o.d -o CMakeFiles/client.dir/Game/game.c.o -c /home/sebasmora/Desktop/cacaInvaderss/Game/game.c
+CMakeFiles/client.dir/game/game.c.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/game/game.c.o: ../game/game.c
+CMakeFiles/client.dir/game/game.c.o: CMakeFiles/client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/space-invaders/client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/client.dir/game/game.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/game/game.c.o -MF CMakeFiles/client.dir/game/game.c.o.d -o CMakeFiles/client.dir/game/game.c.o -c /home/sebasmora/Desktop/space-invaders/client/game/game.c
 
-CMakeFiles/client.dir/Game/game.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/Game/game.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/cacaInvaderss/Game/game.c > CMakeFiles/client.dir/Game/game.c.i
+CMakeFiles/client.dir/game/game.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/game/game.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/space-invaders/client/game/game.c > CMakeFiles/client.dir/game/game.c.i
 
-CMakeFiles/client.dir/Game/game.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/Game/game.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/cacaInvaderss/Game/game.c -o CMakeFiles/client.dir/Game/game.c.s
+CMakeFiles/client.dir/game/game.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/game/game.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/space-invaders/client/game/game.c -o CMakeFiles/client.dir/game/game.c.s
 
-CMakeFiles/client.dir/Game/gameObjets/ship.c.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/Game/gameObjets/ship.c.o: ../Game/gameObjets/ship.c
-CMakeFiles/client.dir/Game/gameObjets/ship.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/cacaInvaderss/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/client.dir/Game/gameObjets/ship.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/Game/gameObjets/ship.c.o -MF CMakeFiles/client.dir/Game/gameObjets/ship.c.o.d -o CMakeFiles/client.dir/Game/gameObjets/ship.c.o -c /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/ship.c
+CMakeFiles/client.dir/game/gameObjets/ship.c.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/game/gameObjets/ship.c.o: ../game/gameObjets/ship.c
+CMakeFiles/client.dir/game/gameObjets/ship.c.o: CMakeFiles/client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/space-invaders/client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/client.dir/game/gameObjets/ship.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/game/gameObjets/ship.c.o -MF CMakeFiles/client.dir/game/gameObjets/ship.c.o.d -o CMakeFiles/client.dir/game/gameObjets/ship.c.o -c /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/ship.c
 
-CMakeFiles/client.dir/Game/gameObjets/ship.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/Game/gameObjets/ship.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/ship.c > CMakeFiles/client.dir/Game/gameObjets/ship.c.i
+CMakeFiles/client.dir/game/gameObjets/ship.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/game/gameObjets/ship.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/ship.c > CMakeFiles/client.dir/game/gameObjets/ship.c.i
 
-CMakeFiles/client.dir/Game/gameObjets/ship.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/Game/gameObjets/ship.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/ship.c -o CMakeFiles/client.dir/Game/gameObjets/ship.c.s
+CMakeFiles/client.dir/game/gameObjets/ship.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/game/gameObjets/ship.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/ship.c -o CMakeFiles/client.dir/game/gameObjets/ship.c.s
 
-CMakeFiles/client.dir/Game/render.c.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/Game/render.c.o: ../Game/render.c
-CMakeFiles/client.dir/Game/render.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/cacaInvaderss/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/client.dir/Game/render.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/Game/render.c.o -MF CMakeFiles/client.dir/Game/render.c.o.d -o CMakeFiles/client.dir/Game/render.c.o -c /home/sebasmora/Desktop/cacaInvaderss/Game/render.c
+CMakeFiles/client.dir/game/render.c.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/game/render.c.o: ../game/render.c
+CMakeFiles/client.dir/game/render.c.o: CMakeFiles/client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/space-invaders/client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/client.dir/game/render.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/game/render.c.o -MF CMakeFiles/client.dir/game/render.c.o.d -o CMakeFiles/client.dir/game/render.c.o -c /home/sebasmora/Desktop/space-invaders/client/game/render.c
 
-CMakeFiles/client.dir/Game/render.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/Game/render.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/cacaInvaderss/Game/render.c > CMakeFiles/client.dir/Game/render.c.i
+CMakeFiles/client.dir/game/render.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/game/render.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/space-invaders/client/game/render.c > CMakeFiles/client.dir/game/render.c.i
 
-CMakeFiles/client.dir/Game/render.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/Game/render.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/cacaInvaderss/Game/render.c -o CMakeFiles/client.dir/Game/render.c.s
+CMakeFiles/client.dir/game/render.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/game/render.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/space-invaders/client/game/render.c -o CMakeFiles/client.dir/game/render.c.s
 
-CMakeFiles/client.dir/Game/gameObjets/bullet.c.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/Game/gameObjets/bullet.c.o: ../Game/gameObjets/bullet.c
-CMakeFiles/client.dir/Game/gameObjets/bullet.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/cacaInvaderss/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/client.dir/Game/gameObjets/bullet.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/Game/gameObjets/bullet.c.o -MF CMakeFiles/client.dir/Game/gameObjets/bullet.c.o.d -o CMakeFiles/client.dir/Game/gameObjets/bullet.c.o -c /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/bullet.c
+CMakeFiles/client.dir/game/gameObjets/bullet.c.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/game/gameObjets/bullet.c.o: ../game/gameObjets/bullet.c
+CMakeFiles/client.dir/game/gameObjets/bullet.c.o: CMakeFiles/client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/space-invaders/client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/client.dir/game/gameObjets/bullet.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/game/gameObjets/bullet.c.o -MF CMakeFiles/client.dir/game/gameObjets/bullet.c.o.d -o CMakeFiles/client.dir/game/gameObjets/bullet.c.o -c /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/bullet.c
 
-CMakeFiles/client.dir/Game/gameObjets/bullet.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/Game/gameObjets/bullet.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/bullet.c > CMakeFiles/client.dir/Game/gameObjets/bullet.c.i
+CMakeFiles/client.dir/game/gameObjets/bullet.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/game/gameObjets/bullet.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/bullet.c > CMakeFiles/client.dir/game/gameObjets/bullet.c.i
 
-CMakeFiles/client.dir/Game/gameObjets/bullet.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/Game/gameObjets/bullet.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/bullet.c -o CMakeFiles/client.dir/Game/gameObjets/bullet.c.s
+CMakeFiles/client.dir/game/gameObjets/bullet.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/game/gameObjets/bullet.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/bullet.c -o CMakeFiles/client.dir/game/gameObjets/bullet.c.s
 
-CMakeFiles/client.dir/Game/gameObjets/bunker.c.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/Game/gameObjets/bunker.c.o: ../Game/gameObjets/bunker.c
-CMakeFiles/client.dir/Game/gameObjets/bunker.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/cacaInvaderss/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/client.dir/Game/gameObjets/bunker.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/Game/gameObjets/bunker.c.o -MF CMakeFiles/client.dir/Game/gameObjets/bunker.c.o.d -o CMakeFiles/client.dir/Game/gameObjets/bunker.c.o -c /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/bunker.c
+CMakeFiles/client.dir/game/gameObjets/bunker.c.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/game/gameObjets/bunker.c.o: ../game/gameObjets/bunker.c
+CMakeFiles/client.dir/game/gameObjets/bunker.c.o: CMakeFiles/client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/space-invaders/client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/client.dir/game/gameObjets/bunker.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/game/gameObjets/bunker.c.o -MF CMakeFiles/client.dir/game/gameObjets/bunker.c.o.d -o CMakeFiles/client.dir/game/gameObjets/bunker.c.o -c /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/bunker.c
 
-CMakeFiles/client.dir/Game/gameObjets/bunker.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/Game/gameObjets/bunker.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/bunker.c > CMakeFiles/client.dir/Game/gameObjets/bunker.c.i
+CMakeFiles/client.dir/game/gameObjets/bunker.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/game/gameObjets/bunker.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/bunker.c > CMakeFiles/client.dir/game/gameObjets/bunker.c.i
 
-CMakeFiles/client.dir/Game/gameObjets/bunker.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/Game/gameObjets/bunker.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/bunker.c -o CMakeFiles/client.dir/Game/gameObjets/bunker.c.s
+CMakeFiles/client.dir/game/gameObjets/bunker.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/game/gameObjets/bunker.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/bunker.c -o CMakeFiles/client.dir/game/gameObjets/bunker.c.s
 
-CMakeFiles/client.dir/Game/collisions.c.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/Game/collisions.c.o: ../Game/collisions.c
-CMakeFiles/client.dir/Game/collisions.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/cacaInvaderss/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/client.dir/Game/collisions.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/Game/collisions.c.o -MF CMakeFiles/client.dir/Game/collisions.c.o.d -o CMakeFiles/client.dir/Game/collisions.c.o -c /home/sebasmora/Desktop/cacaInvaderss/Game/collisions.c
+CMakeFiles/client.dir/game/gameObjets/enemy.c.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/game/gameObjets/enemy.c.o: ../game/gameObjets/enemy.c
+CMakeFiles/client.dir/game/gameObjets/enemy.c.o: CMakeFiles/client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/space-invaders/client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/client.dir/game/gameObjets/enemy.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/game/gameObjets/enemy.c.o -MF CMakeFiles/client.dir/game/gameObjets/enemy.c.o.d -o CMakeFiles/client.dir/game/gameObjets/enemy.c.o -c /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/enemy.c
 
-CMakeFiles/client.dir/Game/collisions.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/Game/collisions.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/cacaInvaderss/Game/collisions.c > CMakeFiles/client.dir/Game/collisions.c.i
+CMakeFiles/client.dir/game/gameObjets/enemy.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/game/gameObjets/enemy.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/enemy.c > CMakeFiles/client.dir/game/gameObjets/enemy.c.i
 
-CMakeFiles/client.dir/Game/collisions.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/Game/collisions.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/cacaInvaderss/Game/collisions.c -o CMakeFiles/client.dir/Game/collisions.c.s
+CMakeFiles/client.dir/game/gameObjets/enemy.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/game/gameObjets/enemy.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/enemy.c -o CMakeFiles/client.dir/game/gameObjets/enemy.c.s
 
-CMakeFiles/client.dir/Game/gameObjets/enemy.c.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/Game/gameObjets/enemy.c.o: ../Game/gameObjets/enemy.c
-CMakeFiles/client.dir/Game/gameObjets/enemy.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/cacaInvaderss/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/client.dir/Game/gameObjets/enemy.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/Game/gameObjets/enemy.c.o -MF CMakeFiles/client.dir/Game/gameObjets/enemy.c.o.d -o CMakeFiles/client.dir/Game/gameObjets/enemy.c.o -c /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/enemy.c
+CMakeFiles/client.dir/game/util.c.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/game/util.c.o: ../game/util.c
+CMakeFiles/client.dir/game/util.c.o: CMakeFiles/client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/space-invaders/client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/client.dir/game/util.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/game/util.c.o -MF CMakeFiles/client.dir/game/util.c.o.d -o CMakeFiles/client.dir/game/util.c.o -c /home/sebasmora/Desktop/space-invaders/client/game/util.c
 
-CMakeFiles/client.dir/Game/gameObjets/enemy.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/Game/gameObjets/enemy.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/enemy.c > CMakeFiles/client.dir/Game/gameObjets/enemy.c.i
+CMakeFiles/client.dir/game/util.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/game/util.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/space-invaders/client/game/util.c > CMakeFiles/client.dir/game/util.c.i
 
-CMakeFiles/client.dir/Game/gameObjets/enemy.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/Game/gameObjets/enemy.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/enemy.c -o CMakeFiles/client.dir/Game/gameObjets/enemy.c.s
+CMakeFiles/client.dir/game/util.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/game/util.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/space-invaders/client/game/util.c -o CMakeFiles/client.dir/game/util.c.s
 
-CMakeFiles/client.dir/Game/util.c.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/Game/util.c.o: ../Game/util.c
-CMakeFiles/client.dir/Game/util.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/cacaInvaderss/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/client.dir/Game/util.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/Game/util.c.o -MF CMakeFiles/client.dir/Game/util.c.o.d -o CMakeFiles/client.dir/Game/util.c.o -c /home/sebasmora/Desktop/cacaInvaderss/Game/util.c
+CMakeFiles/client.dir/game/gameObjets/spacecraft.c.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/game/gameObjets/spacecraft.c.o: ../game/gameObjets/spacecraft.c
+CMakeFiles/client.dir/game/gameObjets/spacecraft.c.o: CMakeFiles/client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/space-invaders/client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/client.dir/game/gameObjets/spacecraft.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/game/gameObjets/spacecraft.c.o -MF CMakeFiles/client.dir/game/gameObjets/spacecraft.c.o.d -o CMakeFiles/client.dir/game/gameObjets/spacecraft.c.o -c /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/spacecraft.c
 
-CMakeFiles/client.dir/Game/util.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/Game/util.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/cacaInvaderss/Game/util.c > CMakeFiles/client.dir/Game/util.c.i
+CMakeFiles/client.dir/game/gameObjets/spacecraft.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/game/gameObjets/spacecraft.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/spacecraft.c > CMakeFiles/client.dir/game/gameObjets/spacecraft.c.i
 
-CMakeFiles/client.dir/Game/util.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/Game/util.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/cacaInvaderss/Game/util.c -o CMakeFiles/client.dir/Game/util.c.s
+CMakeFiles/client.dir/game/gameObjets/spacecraft.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/game/gameObjets/spacecraft.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/space-invaders/client/game/gameObjets/spacecraft.c -o CMakeFiles/client.dir/game/gameObjets/spacecraft.c.s
 
-CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.o: ../Game/gameObjets/spacecraft.c
-CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/cacaInvaderss/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.o -MF CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.o.d -o CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.o -c /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/spacecraft.c
+CMakeFiles/client.dir/socket/cJson.c.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/socket/cJson.c.o: ../socket/cJson.c
+CMakeFiles/client.dir/socket/cJson.c.o: CMakeFiles/client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/space-invaders/client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/client.dir/socket/cJson.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/socket/cJson.c.o -MF CMakeFiles/client.dir/socket/cJson.c.o.d -o CMakeFiles/client.dir/socket/cJson.c.o -c /home/sebasmora/Desktop/space-invaders/client/socket/cJson.c
 
-CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/spacecraft.c > CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.i
+CMakeFiles/client.dir/socket/cJson.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/socket/cJson.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/space-invaders/client/socket/cJson.c > CMakeFiles/client.dir/socket/cJson.c.i
 
-CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/cacaInvaderss/Game/gameObjets/spacecraft.c -o CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.s
+CMakeFiles/client.dir/socket/cJson.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/socket/cJson.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/space-invaders/client/socket/cJson.c -o CMakeFiles/client.dir/socket/cJson.c.s
+
+CMakeFiles/client.dir/socket/socketClient.c.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/socket/socketClient.c.o: ../socket/socketClient.c
+CMakeFiles/client.dir/socket/socketClient.c.o: CMakeFiles/client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/space-invaders/client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/client.dir/socket/socketClient.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/socket/socketClient.c.o -MF CMakeFiles/client.dir/socket/socketClient.c.o.d -o CMakeFiles/client.dir/socket/socketClient.c.o -c /home/sebasmora/Desktop/space-invaders/client/socket/socketClient.c
+
+CMakeFiles/client.dir/socket/socketClient.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/socket/socketClient.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/space-invaders/client/socket/socketClient.c > CMakeFiles/client.dir/socket/socketClient.c.i
+
+CMakeFiles/client.dir/socket/socketClient.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/socket/socketClient.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/space-invaders/client/socket/socketClient.c -o CMakeFiles/client.dir/socket/socketClient.c.s
+
+CMakeFiles/client.dir/socket/serializer.c.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/socket/serializer.c.o: ../socket/serializer.c
+CMakeFiles/client.dir/socket/serializer.c.o: CMakeFiles/client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sebasmora/Desktop/space-invaders/client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/client.dir/socket/serializer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/socket/serializer.c.o -MF CMakeFiles/client.dir/socket/serializer.c.o.d -o CMakeFiles/client.dir/socket/serializer.c.o -c /home/sebasmora/Desktop/space-invaders/client/socket/serializer.c
+
+CMakeFiles/client.dir/socket/serializer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/socket/serializer.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/sebasmora/Desktop/space-invaders/client/socket/serializer.c > CMakeFiles/client.dir/socket/serializer.c.i
+
+CMakeFiles/client.dir/socket/serializer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/socket/serializer.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/sebasmora/Desktop/space-invaders/client/socket/serializer.c -o CMakeFiles/client.dir/socket/serializer.c.s
 
 # Object files for target client
 client_OBJECTS = \
 "CMakeFiles/client.dir/main.c.o" \
-"CMakeFiles/client.dir/Game/game.c.o" \
-"CMakeFiles/client.dir/Game/gameObjets/ship.c.o" \
-"CMakeFiles/client.dir/Game/render.c.o" \
-"CMakeFiles/client.dir/Game/gameObjets/bullet.c.o" \
-"CMakeFiles/client.dir/Game/gameObjets/bunker.c.o" \
-"CMakeFiles/client.dir/Game/collisions.c.o" \
-"CMakeFiles/client.dir/Game/gameObjets/enemy.c.o" \
-"CMakeFiles/client.dir/Game/util.c.o" \
-"CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.o"
+"CMakeFiles/client.dir/game/game.c.o" \
+"CMakeFiles/client.dir/game/gameObjets/ship.c.o" \
+"CMakeFiles/client.dir/game/render.c.o" \
+"CMakeFiles/client.dir/game/gameObjets/bullet.c.o" \
+"CMakeFiles/client.dir/game/gameObjets/bunker.c.o" \
+"CMakeFiles/client.dir/game/gameObjets/enemy.c.o" \
+"CMakeFiles/client.dir/game/util.c.o" \
+"CMakeFiles/client.dir/game/gameObjets/spacecraft.c.o" \
+"CMakeFiles/client.dir/socket/cJson.c.o" \
+"CMakeFiles/client.dir/socket/socketClient.c.o" \
+"CMakeFiles/client.dir/socket/serializer.c.o"
 
 # External object files for target client
 client_EXTERNAL_OBJECTS =
 
 client: CMakeFiles/client.dir/main.c.o
-client: CMakeFiles/client.dir/Game/game.c.o
-client: CMakeFiles/client.dir/Game/gameObjets/ship.c.o
-client: CMakeFiles/client.dir/Game/render.c.o
-client: CMakeFiles/client.dir/Game/gameObjets/bullet.c.o
-client: CMakeFiles/client.dir/Game/gameObjets/bunker.c.o
-client: CMakeFiles/client.dir/Game/collisions.c.o
-client: CMakeFiles/client.dir/Game/gameObjets/enemy.c.o
-client: CMakeFiles/client.dir/Game/util.c.o
-client: CMakeFiles/client.dir/Game/gameObjets/spacecraft.c.o
+client: CMakeFiles/client.dir/game/game.c.o
+client: CMakeFiles/client.dir/game/gameObjets/ship.c.o
+client: CMakeFiles/client.dir/game/render.c.o
+client: CMakeFiles/client.dir/game/gameObjets/bullet.c.o
+client: CMakeFiles/client.dir/game/gameObjets/bunker.c.o
+client: CMakeFiles/client.dir/game/gameObjets/enemy.c.o
+client: CMakeFiles/client.dir/game/util.c.o
+client: CMakeFiles/client.dir/game/gameObjets/spacecraft.c.o
+client: CMakeFiles/client.dir/socket/cJson.c.o
+client: CMakeFiles/client.dir/socket/socketClient.c.o
+client: CMakeFiles/client.dir/socket/serializer.c.o
 client: CMakeFiles/client.dir/build.make
 client: CMakeFiles/client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sebasmora/Desktop/cacaInvaderss/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sebasmora/Desktop/space-invaders/client/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -249,6 +281,6 @@ CMakeFiles/client.dir/clean:
 .PHONY : CMakeFiles/client.dir/clean
 
 CMakeFiles/client.dir/depend:
-	cd /home/sebasmora/Desktop/cacaInvaderss/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sebasmora/Desktop/cacaInvaderss /home/sebasmora/Desktop/cacaInvaderss /home/sebasmora/Desktop/cacaInvaderss/build /home/sebasmora/Desktop/cacaInvaderss/build /home/sebasmora/Desktop/cacaInvaderss/build/CMakeFiles/client.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sebasmora/Desktop/space-invaders/client/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sebasmora/Desktop/space-invaders/client /home/sebasmora/Desktop/space-invaders/client /home/sebasmora/Desktop/space-invaders/client/build /home/sebasmora/Desktop/space-invaders/client/build /home/sebasmora/Desktop/space-invaders/client/build/CMakeFiles/client.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/client.dir/depend
 
