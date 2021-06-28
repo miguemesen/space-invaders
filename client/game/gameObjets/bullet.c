@@ -23,7 +23,6 @@ void moveBulletsPlayer() //Recorre la lista de balas del jugador para moverlas
     {
   
         bulletPlayer->posY -= BULLET_MOVE; //Actualiza la posicion 
-        //sendMoveBulletPlayerCommand(bulletPlayer->posX, bulletPlayer->posY);
 
     }
 
@@ -39,9 +38,7 @@ void moveBulletsEnemy() //Recorre la lista de los enemigos para moverlas
 
     
         bulletEnemy->posY += BULLET_MOVE; //Actualiza la posicion 
-        //sendMoveBulletEnemyCommand(bulletEnemy->posX, bulletEnemy->posY);
-       
-
+   
     }
 
 }
@@ -76,12 +73,11 @@ void updateBulletPlayer(int posX, int posY, int isActive)
 void updateBulletEnemy(int posX, int posY, int isActive)
 {
 
-   
 
-        
-    bulletEnemy->isActive = isActive;
-    bulletEnemy->posX = posX; 
-    bulletEnemy->posY = posY;
+
+        bulletEnemy->isActive = isActive;
+        bulletEnemy->posX = posX; 
+        bulletEnemy->posY = posY;
 
 
 }

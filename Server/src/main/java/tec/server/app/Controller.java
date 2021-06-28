@@ -93,7 +93,8 @@ public class Controller {
     public void insertarEnemigo() throws IOException {
         if (checkBoxJuegoUno.isSelected() && isEnemySelected()){
             if (isRowSelected()){
-                Objects.requireNonNull(ClientHandler.getGameById(1)).sendClientes(Serializer.colocarEnemigos(getEnemyList()));
+                Objects.requireNonNull(ClientHandler.getGameById(1)).
+                        sendClientes(Serializer.colocarEnemigos(getEnemyList()));
             }
             else {
                 try {

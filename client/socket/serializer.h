@@ -16,11 +16,19 @@ void sendObserverCommand(int id);
 
 void sendMovePlayerCommand(int posX, int posY);
 
-void sendAttakedCommand();
+void sendAttackedCommand();
 
 void sendKillEnemyCommand(int enemyId, char* type);
 
-void sendUpdateBunkerCommand(Bunker* bunkerList[NUMBER_OF_BUNKERS]);
+void sendKillSpacecraftCommand();
+
+void sendWinCommand();
+
+void sendEnemyImpactCommand();
+
+void sendGameOverCommand();
+
+cJSON* bunkerState();
 
 cJSON* spacecraftState();
 

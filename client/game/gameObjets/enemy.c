@@ -33,15 +33,15 @@ void checkBoundaries()
         checkBoundariesAux(RIGHT);
     }
 
-    if (enemyMatrix[0][9]->posX == WINDOW_MAX_WIDTH)
+    if (enemyMatrix[0][8]->posX == WINDOW_MAX_WIDTH)
     {
         checkBoundariesAux(LEFT);
     }
 
-    if (enemyMatrix[2][0]->posY == ship->posY)
+    if (enemyMatrix[2][0]->posY >= ship->posY)
     {
 
-        //xd
+        sendEnemyImpactCommand();
 
     }
 
@@ -62,26 +62,29 @@ void updateEnemiesPosition(cJSON* enemies)
         {
 
             Enemy* currentEnemy = enemyMatrix[row][column];
-
             cJSON * enemy = cJSON_GetArrayItem(enemies, column + temp);
             currentEnemy->posX = cJSON_GetObjectItem(enemy, "posX")->valueint;
             currentEnemy->posY = cJSON_GetObjectItem(enemy, "posY")->valueint;
             currentEnemy->isActive = cJSON_GetObjectItem(enemy, "isActive")->valueint;
-            printf("isActive %d \n", currentEnemy->isActive);
-          
+            char* enemyType = cJSON_GetObjectItem(enemy, "type")->valuestring;
 
+            if(currentEnemy->type == NULL && enemyType != NULL)
+            {
+                setEnemyTexture(enemyType, currentEnemy);
+            }
+        
         }
 
         temp += 10;
     }
+
+    printf("----------------------------------- \n");
 
 }
 
 
 void putEnemy(cJSON* enemies)
 {
-
-    printf("size %d \n", cJSON_GetArraySize(enemies));
 
     for(int i=0; i < cJSON_GetArraySize(enemies); i++)
     {
@@ -92,13 +95,19 @@ void putEnemy(cJSON* enemies)
         int enemyId = cJSON_GetObjectItem(enemyJSON, "enemyId")->valueint;
         char* enemyType = cJSON_GetObjectItem(enemyJSON, "enemyType")->valuestring;
 
-        
-
         Enemy* enemy = getEnemyByID(enemyId);
+        setEnemyTexture(enemyType, enemy);
+        enemy->type = enemyType;
+        enemy->isActive = 1;
+    }
 
-        printf("%d   %s \n", enemy->id, enemyType);
+}
 
-        if (strcmp(enemyType, "crab") == 0)
+
+
+void setEnemyTexture(char* enemyType, Enemy* enemy)
+{
+    if (strcmp(enemyType, "crab") == 0)
         {
             enemy->texture = loadTexture(CRAB_SPRITE_PATH);
         }
@@ -112,10 +121,6 @@ void putEnemy(cJSON* enemies)
             enemy->texture = loadTexture(SQUID_SPRITE_PATH);
         }
 
-        enemy->type = enemyType;
-        enemy->isActive = 1;
-    }
-
 }
 
 
@@ -128,19 +133,13 @@ void deleteEnemy(cJSON* enemies)
     {
 
         cJSON * enemy = cJSON_GetArrayItem(enemies, i);
-        int id = cJSON_GetObjectItem(enemy, "id")->valueint;
+        int id = cJSON_GetObjectItem(enemy, "enemyId")->valueint;
 
         Enemy* currentEnemy = getEnemyByID(id);
 
         currentEnemy->isActive = 0;
-     
-
-
+    
     }
-
-
-
-
 
 
 }
@@ -185,17 +184,114 @@ void moveEnemies()
 
             Enemy* enemy = enemyMatrix[row][column];
 
-            enemy->posX += 1*enemy->dir;
+            enemy->posX += 5*enemy->dir;
 
         }
     
     }
 
     checkBoundaries();
-    //sendMoveEnemiesCommand(enemyMatrix);
+ 
+}
+
+
+void setDefaultEnemyValues()
+{
+
+    int posX = 0;
+    int posY = 70;
+
+
+    for(int row=0; row < ROW_ENEMY_MATRIX; row++)
+    {
+        posX = 0;
+        posY += 40;
+        
+        for(int column=0; column < COLUMNS_ENEMY_MATRIX; column++)
+        {
+            posX += 60;
+
+            Enemy* enemy = enemyMatrix[row][column];
+            enemy->posX = posX;
+            enemy->posY = posY;
+            enemy->isActive = 1;
+            enemy->dir = 1;
+    
+    
+        } 
+    }
+}
+
+ 
+int enemyLeft()
+
+{
+
+    for(int row=0; row < ROW_ENEMY_MATRIX; row++)
+    {
+       
+         for(int column=0; column < COLUMNS_ENEMY_MATRIX; column++)
+        {
+        
+            Enemy* enemy = enemyMatrix[row][column];
+            
+
+            if (enemy->isActive)
+            {
+                return 1;
+            }
+
+        } 
+    }
+
+
+    return 0;
 
 
 }
+
+
+cJSON* getActiveEnemies()
+{
+
+
+    cJSON* arr = cJSON_CreateArray();
+  
+    for(int row=0; row < ROW_ENEMY_MATRIX; row++)
+    {
+
+        for(int column=0; column < COLUMNS_ENEMY_MATRIX; column++)
+        {
+
+            Enemy* currentEnemy = enemyMatrix[row][column];
+
+            if (currentEnemy->isActive)
+            {
+
+                printf("ENTRAAA \n");
+                cJSON *root = cJSON_CreateObject();
+                cJSON_AddNumberToObject(root, "posX", currentEnemy->posX);
+                cJSON_AddNumberToObject(root, "posY", currentEnemy->posY);
+                cJSON_AddItemToArray(arr, root);
+
+            }
+              
+        }
+
+    }
+
+    return arr;
+
+
+
+
+}
+
+
+
+
+
+
 
 
 

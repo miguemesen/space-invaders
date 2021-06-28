@@ -22,13 +22,14 @@
 #define DELAY 50
 #define LEFT -1 
 #define RIGHT 1
-#define SHIP_MOVE 10
-#define BULLET_MOVE 5
+#define SHIP_MOVE 15
+#define BULLET_MOVE 10
 #define INITIAL_POS_X 500
 #define INITIAL_POS_Y 640
 #define ROW_ENEMY_MATRIX 3
 #define COLUMNS_ENEMY_MATRIX 10
 #define NUMBER_OF_BUNKERS 4
+#define TEXTURE_NULL "null"
 
 #define BUNKER_LIST_SIZE 4
 

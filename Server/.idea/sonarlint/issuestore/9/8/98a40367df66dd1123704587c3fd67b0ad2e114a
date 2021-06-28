@@ -1,19 +1,21 @@
 
+H
+java:S5411’"*Use the primitive boolean expression here.(ÑØ…8°üÑè¤/
 W
 java:S1118":Add a private constructor to hide the implicit public one.(êòŒ8®Î•á¤/
-k
-java:S1192w"IDefine a constant instead of duplicating this literal "isActive" 4 times.(ÄÉ½ôşÿÿÿÿ8®Î•á¤/
 e
-java:S1192G"HDefine a constant instead of duplicating this literal "enemyId" 3 times.(•ÔŠ•8®Î•á¤/
-d
-java:S1192"GDefine a constant instead of duplicating this literal "gameId" 7 times.(ÁÇ©Ó8®Î•á¤/
-j
-java:S1192"HDefine a constant instead of duplicating this literal "command" 9 times.(’Œ‘—ıÿÿÿÿ8®Î•á¤/
+java:S1192["HDefine a constant instead of duplicating this literal "enemyId" 3 times.(•ÔŠ•8®Î•á¤/
+c
+java:S11921"FDefine a constant instead of duplicating this literal "score" 3 times.(ßèæÛ8¿•Ÿø¤/
 g
-java:S1192H"JDefine a constant instead of duplicating this literal "enemyType" 3 times.(ğı£°8®Î•á¤/
-h
-java:S1192-"FDefine a constant instead of duplicating this literal "lives" 3 times.(‡ŠŸÌûÿÿÿÿ8®Î•á¤/
-L
-java:S5411v"*Use the primitive boolean expression here.(·„”†ûÿÿÿÿ8°üÑè¤/
-G
-java:S5411~"*Use the primitive boolean expression here.(ÑØ…8°üÑè¤/
+java:S1192\"JDefine a constant instead of duplicating this literal "enemyType" 3 times.(ğı£°8®Î•á¤/
+M
+java:S5411Š"*Use the primitive boolean expression here.(·„”†ûÿÿÿÿ8°üÑè¤/
+l
+java:S1192‹"IDefine a constant instead of duplicating this literal "isActive" 4 times.(ÄÉ½ôşÿÿÿÿ8®Î•á¤/
+c
+java:S11922"FDefine a constant instead of duplicating this literal "lives" 3 times.(ú·÷¥8¿•Ÿø¤/
+d
+java:S1192"GDefine a constant instead of duplicating this literal "gameId" 8 times.(ÁÇ©Ó8éŠÊû¤/
+k
+java:S1192"IDefine a constant instead of duplicating this literal "command" 10 times.(’Œ‘—ıÿÿÿÿ8éŠÊû¤/

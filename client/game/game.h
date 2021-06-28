@@ -47,13 +47,19 @@ int bunkerCollision(int posX, int posY);
 int enemiesCollision(int posX, int posY);
 int shipCollision(int posX, int posY);
 int spacecraftCollision(int posX, int posY);
+void hasWin();
+void gameOver(int score, int lives);
+
 
 void sendPutBulletPlayerCommand(int posX, int posY);
 void sendPutBulletEnemyCommand(int posX, int posY);
 void sendKillPlayerCommand();
 void sendKillEnemyCommand(int enemyId, char* type);
-void sendAttakedCommand();
+void sendAttackedCommand();
 void sendUpdateGameStateCommand();
+void sendWinCommand();
+void sendGameOverCommand();
+void sendKillSpacecraftCommand();
 
 #endif //CLIENT_GAME_CUH
 

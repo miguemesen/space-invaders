@@ -41,6 +41,16 @@ void putEnemy(cJSON* enemies);
 
 void deleteEnemy(cJSON* enemies);
 
+void setDefaultEnemyValues();
+
+void sendEnemyImpactCommand();
+
+int enemyLeft();
+
+cJSON* getActiveEnemies();
+
+void setEnemyTexture(char* type, Enemy* enemy);
+
 Enemy* getEnemyByID(int id);
 
 

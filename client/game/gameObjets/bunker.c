@@ -22,6 +22,7 @@ void updateBunkerHealth(Bunker** bunker)
 
         if (health == 100){
 
+            (*bunker)->currentTexture = (*bunker)->texture;
             return;
         }
 
@@ -84,10 +85,23 @@ void updateBunkers(cJSON* bunkers)
 
     }
 
-    printf("----------------------------\n");
+
+}
 
 
+void setBunkersDefaultValues()
+{
 
+  
+    for(int i=0; i< NUMBER_OF_BUNKERS; i++)
+    {
+
+        Bunker* temp = bunkerList[i];
+        temp->health = 100;
+        temp->isActive = 1;
+        temp->currentTexture = temp->texture;
+
+    }
 
 }
 

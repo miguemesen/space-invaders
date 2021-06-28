@@ -1,76 +1,100 @@
 
-y
-java:S1104"\Make tipoEnemigoPulpo a static final constant or non-public and provide accessors if needed.(—öäÇ8­‘·è¤/
-U	java:S106f"9Replace this use of System.out or System.err by a logger.(şèµö8­‘·è¤/
-a
-java:S1155š">Use isEmpty() to check whether the collection is empty or not.(éÜÚÈûÿÿÿÿ8­‘·è¤/
-u
-java:S1104"YMake todosEliminar a static final constant or non-public and provide accessors if needed.(î§åh8­‘·è¤/
-U
-java:S1172¨"2Remove this unused method parameter "actionEvent".(µ¤ãŠøÿÿÿÿ8­‘·è¤/
-P
-java:S1172®"2Remove this unused method parameter "actionEvent".(Ó¹ãÊ8­‘·è¤/
-E
-java:S1148b"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8­‘·è¤/
-€
-java:S1104"^Make tipoEnemigoCalamar a static final constant or non-public and provide accessors if needed.(¯ĞÅœùÿÿÿÿ8­‘·è¤/
-x
-java:S1104"[Make checkBoxFilaDos a static final constant or non-public and provide accessors if needed.( ºäÎ8­‘·è¤/
-G
-java:S5411T"*Use the primitive boolean expression here.(üÔÈ8­‘·è¤/
-†
-java:S1104"dMake insertarEnemigoAleatorio a static final constant or non-public and provide accessors if needed.(â‚‡­ÿÿÿÿÿ8­‘·è¤/
-U	java:S106L"9Replace this use of System.out or System.err by a logger.(óıˆ™8­‘·è¤/
-O
-java:S1172j"2Remove this unused method parameter "actionEvent".(Œ¤²é8­‘·è¤/
-O
-java:S1172u"2Remove this unused method parameter "actionEvent".(ÕÅ©İ8­‘·è¤/
-P
-java:S1172„"2Remove this unused method parameter "actionEvent".(†ƒê”8­‘·è¤/
-…
-java:S1104"cMake puntajeEnemigoAleatorio a static final constant or non-public and provide accessors if needed.(³Î¶¤ıÿÿÿÿ8­‘·è¤/
-M
-java:S1066™"/Merge this if statement with the enclosing one.(ÎğÛî8­‘·è¤/
-U	java:S106_"9Replace this use of System.out or System.err by a logger.(óıˆ™8­‘·è¤/
-R
-java:S1066š"/Merge this if statement with the enclosing one.(éÜÚÈûÿÿÿÿ8­‘·è¤/
-N
-java:S1172}"2Remove this unused method parameter "actionEvent".(²ôş#8­‘·è¤/
-P
-java:S1172"2Remove this unused method parameter "actionEvent".(ğÊú’8‡ã‰é¤/
-}
-java:S1104"[Make checkBoxFilaUno a static final constant or non-public and provide accessors if needed.(èÃ­‡ûÿÿÿÿ8­‘·è¤/
-T
-java:S1172y"2Remove this unused method parameter "actionEvent".(ëÃÏüÿÿÿÿ8­‘·è¤/
-€
-java:S1104"cMake posicionEnemigoEliminar a static final constant or non-public and provide accessors if needed.(õª»Ê8­‘·è¤/
-t
-java:S3776?"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(ñ¼¡¢ùÿÿÿÿ8­‘·è¤/
-K	java:S108š")Either remove or fill this block of code.(éÜÚÈûÿÿÿÿ8­‘·è¤/
-|
-java:S1104"_Make tipoEnemigoCangrejo a static final constant or non-public and provide accessors if needed.(ÇòÎ“8­‘·è¤/
-y
-java:S1104"\Make checkBoxFilaTres a static final constant or non-public and provide accessors if needed.(· û‘8­‘·è¤/
-U
-java:S1172—"2Remove this unused method parameter "actionEvent".(Ì…ö“ûÿÿÿÿ8­‘·è¤/
 }
 java:S1104"`Make botonInsertarEnemigo a static final constant or non-public and provide accessors if needed.(ÑßŒº8­‘·è¤/
-U	java:S106q"9Replace this use of System.out or System.err by a logger.(şèµö8­‘·è¤/
-P
-java:S1172¢"2Remove this unused method parameter "actionEvent".(Øâ·8­‘·è¤/
+|
+java:S1104"_Make tipoEnemigoCangrejo a static final constant or non-public and provide accessors if needed.(ÇòÎ“8­‘·è¤/
+U	java:S106k"9Replace this use of System.out or System.err by a logger.(óıˆ™8»íÅö¤/
 €
 java:S1104"cMake insertarEnemigoPosicion a static final constant or non-public and provide accessors if needed.(œáÕİ8­‘·è¤/
-~
-java:S1104"\Make checkBoxJuegoUno a static final constant or non-public and provide accessors if needed.(Â†ÑÅıÿÿÿÿ8­‘·è¤/
-P
-java:S1172Š"2Remove this unused method parameter "actionEvent".(ÌıåĞ8‡ã‰é¤/
-G
-java:S5411A"*Use the primitive boolean expression here.(üÔÈ8­‘·è¤/
+F
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8»íÅö¤/
+V	java:S106…"9Replace this use of System.out or System.err by a logger.(şèµö8»íÅö¤/
+V	java:S106á"9Replace this use of System.out or System.err by a logger.(óıˆ™8»íÅö¤/
+y
+java:S1104"\Make checkBoxFilaTres a static final constant or non-public and provide accessors if needed.(· û‘8­‘·è¤/
+u
+java:S1104!"YMake isRandomPoint a static final constant or non-public and provide accessors if needed.(Ùİd8»íÅö¤/
+V	java:S106Ò"9Replace this use of System.out or System.err by a logger.(óıˆ™8»íÅö¤/
 v
 java:S1104"YMake botonEliminar a static final constant or non-public and provide accessors if needed.(Ì¡ı¶8­‘·è¤/
 ~
-java:S1104"\Make checkBoxJuegoDos a static final constant or non-public and provide accessors if needed.(²€×Ñûÿÿÿÿ8­‘·è¤/
+java:S1104""\Make spacecraftPoints a static final constant or non-public and provide accessors if needed.(¥¼¢Ìøÿÿÿÿ8»íÅö¤/
+H
+java:S5411×"*Use the primitive boolean expression here.(üÔÈ8»íÅö¤/
+P
+java:S1172ê"2Remove this unused method parameter "actionEvent".(Øâ·8­‘·è¤/
+‹
+java:S1192…"mDefine a constant instead of duplicating this literal "No se selecciona el juego que quiere manejar" 3 times.(şèµö8»íÅö¤/
+P
+java:S1172‰"2Remove this unused method parameter "actionEvent".(òó¸æ8»íÅö¤/
+d
+java:S1192L"HDefine a constant instead of duplicating this literal "default" 5 times.(çŸ°z8»íÅö¤/
+M
+java:S5411È"*Use the primitive boolean expression here.(’ğÏşÿÿÿÿÿ8»íÅö¤/
+U	java:S106~"9Replace this use of System.out or System.err by a logger.(óıˆ™8»íÅö¤/
+P
+java:S1172“"2Remove this unused method parameter "actionEvent".(Œ¤²é8»íÅö¤/
+U
+java:S1172ğ"2Remove this unused method parameter "actionEvent".(µ¤ãŠøÿÿÿÿ8­‘·è¤/
+H
+java:S5411š"*Use the primitive boolean expression here.(üÀ¹Û8»íÅö¤/
+‹
+java:S1192k"nDefine a constant instead of duplicating this literal "Posicion ingresada no se encuentra en el mapa" 4 times.(óıˆ™8»íÅö¤/
+E
+java:S1148n"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8»íÅö¤/
+P
+java:S1172ö"2Remove this unused method parameter "actionEvent".(Ó¹ãÊ8­‘·è¤/
+P
+java:S1172¼"2Remove this unused method parameter "actionEvent".(ğÊú’8»íÅö¤/
+U
+java:S1172Ã"2Remove this unused method parameter "actionEvent".(Ì…ö“ûÿÿÿÿ8»íÅö¤/
+V	java:S106›"9Replace this use of System.out or System.err by a logger.(Â‚8»íÅö¤/
+y
+java:S1104"\Make tipoEnemigoPulpo a static final constant or non-public and provide accessors if needed.(—öäÇ8­‘·è¤/
+X
+java:S1444""6Make this "public static spacecraftPoints" field final(¥¼¢Ìøÿÿÿÿ8»íÅö¤/
+G
+java:S5411s"*Use the primitive boolean expression here.(üÔÈ8»íÅö¤/
 t
 java:S1104 "WMake tipoEnemigo a static final constant or non-public and provide accessors if needed.(íı”œ8­‘·è¤/
-E
-java:S1148O"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8­‘·è¤/
+~
+java:S1104"\Make checkBoxJuegoUno a static final constant or non-public and provide accessors if needed.(Â†ÑÅıÿÿÿÿ8­‘·è¤/
+~
+java:S1104"\Make checkBoxJuegoDos a static final constant or non-public and provide accessors if needed.(²€×Ñûÿÿÿÿ8­‘·è¤/
+P
+java:S1172¡"2Remove this unused method parameter "actionEvent".(ÕÅ©İ8»íÅö¤/
+O
+java:S1172©"2Remove this unused method parameter "actionEvent".(²ôş#8»íÅö¤/
+u
+java:S3776Ã"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(Ì…ö“ûÿÿÿÿ8»íÅö¤/
+…
+java:S1104"cMake puntajeEnemigoAleatorio a static final constant or non-public and provide accessors if needed.(³Î¶¤ıÿÿÿÿ8­‘·è¤/
+R
+java:S2696‹"6Make the enclosing method "static" or remove this set.(ş„8»íÅö¤/
+V	java:S106å"9Replace this use of System.out or System.err by a logger.(şèµö8»íÅö¤/
+U
+java:S1172¥"2Remove this unused method parameter "actionEvent".(ëÃÏüÿÿÿÿ8»íÅö¤/
+V	java:S106"9Replace this use of System.out or System.err by a logger.(şèµö8»íÅö¤/
+t
+java:S3776]"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(ñ¼¡¢ùÿÿÿÿ8»íÅö¤/
+€
+java:S1104"cMake posicionEnemigoEliminar a static final constant or non-public and provide accessors if needed.(õª»Ê8­‘·è¤/
+P
+java:S1172°"2Remove this unused method parameter "actionEvent".(†ƒê”8»íÅö¤/
+x
+java:S1104"[Make checkBoxFilaDos a static final constant or non-public and provide accessors if needed.( ºäÎ8­‘·è¤/
+u
+java:S1104"YMake todosEliminar a static final constant or non-public and provide accessors if needed.(î§åh8­‘·è¤/
+}
+java:S1104"[Make checkBoxFilaUno a static final constant or non-public and provide accessors if needed.(èÃ­‡ûÿÿÿÿ8­‘·è¤/
+€
+java:S1104"^Make tipoEnemigoCalamar a static final constant or non-public and provide accessors if needed.(¯ĞÅœùÿÿÿÿ8­‘·è¤/
+[	java:S106"9Replace this use of System.out or System.err by a logger.(û‹È—şÿÿÿÿ8»íÅö¤/
+F
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8»íÅö¤/
+G
+java:S5411_"*Use the primitive boolean expression here.(üÔÈ8»íÅö¤/
+P
+java:S1172¶"2Remove this unused method parameter "actionEvent".(ÌıåĞ8»íÅö¤/
+†
+java:S1104"dMake insertarEnemigoAleatorio a static final constant or non-public and provide accessors if needed.(â‚‡­ÿÿÿÿÿ8­‘·è¤/

@@ -51,27 +51,41 @@ void sendUpdateGameStateCommand()
     cJSON* bulletPlayerStateJSON =  bulletPlayerState();
     cJSON* enemiesStateJSON = enemiesState();
     cJSON* spacecraftJSON = spacecraftState();
+    cJSON* bunkerJSON = bunkerState();
     cJSON_AddStringToObject(root, "command", "updateGameState");
     cJSON_AddNumberToObject(root, "gameId", gameId);
     cJSON_AddItemToObject(root, "bulletEnemy", bulletEnemyStateJSON);
     cJSON_AddItemToObject(root, "bulletPlayer",bulletPlayerStateJSON);
     cJSON_AddItemToObject(root, "enemies",enemiesStateJSON);
     cJSON_AddItemToObject(root, "spacecraft",spacecraftJSON);
+    cJSON_AddItemToObject(root, "bunkers",bunkerJSON);
     char* command = cJSON_PrintUnformatted(root);
     sendServer(command);
   
 
 }
 
+void sendKillSpacecraftCommand()
+{
+
+    cJSON *root;
+    root = cJSON_CreateObject();
+    cJSON_AddStringToObject(root, "command", "killSpacecraft");
+    cJSON_AddNumberToObject(root, "gameId", gameId);
+    char* command = cJSON_PrintUnformatted(root);
+    sendServer(command);
+
+
+}
 
 
 
 
-void sendAttakedCommand()
+void sendAttackedCommand()
 {
 
     cJSON* root = cJSON_CreateObject();
-    cJSON_AddStringToObject(root, "command", "attaked");
+    cJSON_AddStringToObject(root, "command", "attacked");
     cJSON_AddNumberToObject(root, "gameId", gameId);
     char* command = cJSON_PrintUnformatted(root);
     sendServer(command);
@@ -95,7 +109,40 @@ void sendKillEnemyCommand(int enemyId, char* type)
 
 
 
-void sendUpdateBunkerCommand(Bunker* bunkerList[NUMBER_OF_BUNKERS])
+void sendWinCommand()
+{
+    cJSON* root = cJSON_CreateObject();
+    cJSON_AddStringToObject(root, "command", "win");
+    cJSON_AddNumberToObject(root, "gameId", gameId);
+    char* command = cJSON_PrintUnformatted(root);
+    sendServer(command);
+
+}
+
+void sendGameOverCommand()
+{
+
+    cJSON* root = cJSON_CreateObject();
+    cJSON_AddStringToObject(root, "command", "gameOver");
+    cJSON_AddNumberToObject(root, "gameId", gameId);
+    char* command = cJSON_PrintUnformatted(root);
+    sendServer(command);
+
+}
+
+
+void sendEnemyImpactCommand()
+{
+
+    cJSON* root = cJSON_CreateObject();
+    cJSON_AddStringToObject(root, "command", "enemyImpact");
+    cJSON_AddNumberToObject(root, "gameId", gameId);
+    char* command = cJSON_PrintUnformatted(root);
+    sendServer(command);
+
+}
+
+cJSON* bunkerState()
 {
 
     cJSON* arr = cJSON_CreateArray();
@@ -112,15 +159,7 @@ void sendUpdateBunkerCommand(Bunker* bunkerList[NUMBER_OF_BUNKERS])
 
     }
 
-    cJSON * command = cJSON_CreateObject();
-    cJSON_AddStringToObject(command, "command", "updateBunkers");
-    cJSON_AddNumberToObject(command, "gameId", gameId);
-    cJSON_AddItemToObject(command,"bunkers", arr);
-    char* command_ = cJSON_PrintUnformatted(command);
-    sendServer(command_);
-    printf("%s \n", command_);
-
-
+    return arr;
 }
 
 
@@ -186,6 +225,14 @@ cJSON* enemiesState()
             cJSON_AddNumberToObject(root, "posX", currentEnemy->posX);
             cJSON_AddNumberToObject(root, "posY", currentEnemy->posY);
             cJSON_AddNumberToObject(root, "isActive", currentEnemy->isActive);
+
+            if (currentEnemy->type == NULL){
+                cJSON_AddStringToObject(root, "type", "null");
+            }
+            else
+            {
+                cJSON_AddStringToObject(root, "type",currentEnemy->type);
+            }
             cJSON_AddItemToArray(arr, root);
 
         }

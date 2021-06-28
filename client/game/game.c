@@ -126,13 +126,14 @@ void gameLoop(){
             enemyFire();
             collisions();
             sendUpdateGameStateCommand();
+            hasWin();
         }
 
 
-    
+
+
 
         
-
 
 
         SDL_RenderClear(renderer);
@@ -277,7 +278,6 @@ void shoot()
     {
 
         updateBulletPlayer(ship->posX + 20, ship->posY, ACTIVE);
-        //sendPutBulletPlayerCommand(bulletPlayer->posX, bulletPlayer->posY);
     }
 
 }
@@ -289,18 +289,65 @@ void enemyFire()
 
     if (!bulletEnemy->isActive)
     {
+
+
   
-        int i = generateRandomNum(ROW_ENEMY_MATRIX - 1);
-        int j = generateRandomNum(COLUMNS_ENEMY_MATRIX - 1);
-        Enemy* tempEnemy = enemyMatrix[i][j];
+        cJSON* activeEnemies = getActiveEnemies();
+        if (activeEnemies != NULL)
+        {
+            int size = cJSON_GetArraySize(activeEnemies);
+            printf("%d \n", size);
 
-        updateBulletEnemy(tempEnemy->posX, tempEnemy->posY, ACTIVE);
-        //sendPutBulletEnemyCommand(bulletEnemy->posX, bulletEnemy->posY);
+            if (cJSON_GetArraySize(activeEnemies) > 0)
+            {
 
+                
+                int index = generateRandomNum(size - 1);
+                cJSON * enemy = cJSON_GetArrayItem(activeEnemies, index);
+                int posX = cJSON_GetObjectItem(enemy, "posX")->valueint;
+                int posY = cJSON_GetObjectItem(enemy, "posY")->valueint;
+        
+                updateBulletEnemy(posX, posY, ACTIVE);
+        
+            }
+        }
+
+     
+        
     }
 
 
 
+}
+
+
+void hasWin()
+{
+
+    if(!enemyLeft())
+    {
+
+        setDefaultEnemyValues();
+        sendWinCommand();
+    } 
+}
+
+
+void gameOver(int defaultScore, int defaultLives)
+{
+
+
+    if(!isObserver)
+    {
+
+        setBunkersDefaultValues();
+        setDefaultEnemyValues();
+    
+    }
+  
+
+    ship->score = defaultScore;
+    ship->lives = defaultLives;
 }
 
 
@@ -338,7 +385,6 @@ void bulletPlayerCollisions()
         {
 
             bulletPlayer->isActive = 0;
-
 
         }
         
@@ -414,7 +460,7 @@ int shipCollision(int posX, int posY)
             if (!isObserver)
             {
 
-                sendAttakedCommand();
+                sendAttackedCommand();
 
             }
 
@@ -447,7 +493,6 @@ int bunkerCollision(int posX, int posY)
 
                 current->health -= 20;
                 updateBunkerHealth(&current);
-                sendUpdateBunkerCommand(bunkerList);
                 return 1;
 
             }
@@ -509,6 +554,7 @@ int spacecraftCollision(int posX, int posY)
         {
 
             killSpacecraft();
+            sendKillSpacecraftCommand();
             return 1;
 
         }

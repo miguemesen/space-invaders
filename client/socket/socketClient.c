@@ -38,7 +38,6 @@ _Noreturn void *listen_socket(){
     while(1){
 
         if (read(client, server_reply, 2000) > 0) {
-            //printf("xdd %s \n",server_reply);
             cJSON *serverReplyCommand = cJSON_Parse(server_reply);
             char* command = cJSON_GetObjectItem(serverReplyCommand, "command")->valuestring;
             //printf("command : %s \n", command);
@@ -99,26 +98,18 @@ _Noreturn void *listen_socket(){
                 int spacecraftIsActive = cJSON_GetObjectItem(spacecraftJSON , "isActive")->valueint;
                 updateSpaceCraft(spacecraftPosX, spacecraftPosY,spacecraftIsActive);
 
+
+                cJSON* bunkersJSON = cJSON_GetObjectItem(serverReplyCommand, "bunkers");
+                updateBunkers(bunkersJSON);
+
             }
 
 
     
-            else if (strcmp(command, "updateBunkers") == 0)
-            {
-        
-
-                cJSON *bunkers = cJSON_GetObjectItem(serverReplyCommand, "bunkers");
-
-
-                updateBunkers(bunkers);
-
-            }
-
-
 
             else if (strcmp(command, "putEnemies")== 0)
             {
-
+            
                 cJSON *enemies = cJSON_GetObjectItem(serverReplyCommand, "enemies");
                 putEnemy(enemies);
             }
@@ -126,10 +117,11 @@ _Noreturn void *listen_socket(){
 
 
 
-            else if (strcmp(command, "deleteEnemy")==0)
+            else if (strcmp(command, "removeEnemies")==0)
             {
 
 
+    
                 cJSON* enemies = cJSON_GetObjectItem(serverReplyCommand, "enemies");
                 deleteEnemy(enemies);
                 
@@ -152,6 +144,20 @@ _Noreturn void *listen_socket(){
 
                 int newLives = cJSON_GetObjectItem(serverReplyCommand, "lives")->valueint;
                 updateLives(newLives);
+
+            }
+
+
+            else if(strcmp(command, "gameOver") == 0)
+            {
+
+
+    
+                int score = cJSON_GetObjectItem(serverReplyCommand, "score")->valueint;
+                int lives = cJSON_GetObjectItem(serverReplyCommand, "lives")->valueint;
+                gameOver(score, lives);
+
+
 
             }
 

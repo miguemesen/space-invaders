@@ -38,8 +38,6 @@ Bunker* bunkerList[NUMBER_OF_BUNKERS];
 
 void updateBunkerHealth(Bunker **bunker);
 
-void sendUpdateBunkerCommand(Bunker* bunkerList[NUMBER_OF_BUNKERS]);
-
 void updateBunkers(cJSON* bunkers);
 
 Bunker* initBunkerList();
@@ -47,6 +45,8 @@ Bunker* initBunkerList();
 void createBulletEnemy();
 
 void createBulletPlayer();
+
+void setBunkersDefaultValues();
 
 
 #endif

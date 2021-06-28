@@ -1,64 +1,70 @@
 
-~
-java:S4144¯"`Update this method so that its implementation is not identical to "updateGameState" on line 111.(¯Éú8¦Ş•á¤/
-O
-java:S1144¸"1Remove this unused private "moverEnemigo" method.(ËªñŞ8ıˆÚå¤/
-ƒ
-java:S4144Œ"`Update this method so that its implementation is not identical to "updateGameState" on line 111.(‘ßÑ‘ÿÿÿÿÿ8¦Ş•á¤/
-‚
-java:S4144y"`Update this method so that its implementation is not identical to "updateGameState" on line 111.(Å³÷øûÿÿÿÿ8ıˆÚå¤/
-E
-java:S1148s"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ıˆÚå¤/
-~
-java:S4144¦"`Update this method so that its implementation is not identical to "updateGameState" on line 111.(°ªÁı8¦Ş•á¤/
-d
-java:S2142»"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8¦Ş•á¤/
-]	java:S125e"<This block of commented-out lines of code should be removed.(ÀÜ—Ìşÿÿÿÿ8ıˆÚå¤/
-d
-java:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8¦Ş•á¤/
-d
-java:S2142©"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8¦Ş•á¤/
-d
-java:S2142²"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8¦Ş•á¤/
-E
-java:S1148}"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¦Ş•á¤/
-F
-java:S1148³"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¦Ş•á¤/
-d
-java:S2142Õ"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8¦Ş•á¤/
+]	java:S125^"<This block of commented-out lines of code should be removed.(¿ñ¨³ûÿÿÿÿ8Àìºõ¤/
 K
 java:S1068"/Remove this unused "enemyBullet" private field.(ƒĞ¿8ãşâá¤/
-]	java:S125\"<This block of commented-out lines of code should be removed.(¿ñ¨³ûÿÿÿÿ8ıˆÚå¤/
-U
-java:S1144y"3Remove this unused private "moveSpacecraft" method.(Å³÷øûÿÿÿÿ8ıˆÚå¤/
-Ÿ
-java:S1186à"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ğ¹Íº8º®§Ò¤/
-~
-java:S4144¸"`Update this method so that its implementation is not identical to "updateGameState" on line 111.(ËªñŞ8¦Ş•á¤/
-M
-java:S1144¯"/Remove this unused private "moverBalas" method.(¯Éú8ıˆÚå¤/
-]	java:S125k"<This block of commented-out lines of code should be removed.(ï¾Ÿ›üÿÿÿÿ8ıˆÚå¤/
-c
-java:S2142|"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8¦Ş•á¤/
-Q
-java:S1144Œ".Remove this unused private "putBullet" method.(‘ßÑ‘ÿÿÿÿÿ8ıˆÚå¤/
-F
-java:S1148ª"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¦Ş•á¤/
-F
-java:S1148Ö"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¦Ş•á¤/
-X	java:S125Y"<This block of commented-out lines of code should be removed.(»÷È8ıˆÚå¤/
+X	java:S125["<This block of commented-out lines of code should be removed.(»÷È8Àìºõ¤/
+]	java:S125y"<This block of commented-out lines of code should be removed.(ï¾Ÿ›üÿÿÿÿ8¤—Êû¤/
+]	java:S125g"<This block of commented-out lines of code should be removed.(ÀÜ—Ìşÿÿÿÿ8Àìºõ¤/
 e
-java:S1192S"HDefine a constant instead of duplicating this literal "command" 5 times.(“‡çé8ıˆÚå¤/
-c
-java:S2142r"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ıˆÚå¤/
-
-java:S1130Ñ"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(Œ‡¹ƒúÿÿÿÿ8şé˜æ¤/
-P
-java:S1172•"2Remove this unused method parameter "commandJSON".(ãæ’Â8¦Ş•á¤/
-F
-java:S1148¼"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¦Ş•á¤/
-Y	java:S125Ù"<This block of commented-out lines of code should be removed.(¢îØ8ãşâá¤/
-F
-java:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¦Ş•á¤/
+java:S1192U"HDefine a constant instead of duplicating this literal "command" 9 times.(“‡çé8Àìºõ¤/
 M
 java:S1068"0Remove this unused "playerBullet" private field.(†ãØÕ8ãşâá¤/
+F
+java:S1148š"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‚µËı¤/
+F
+java:S1148ª"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‚µËı¤/
+F
+java:S1148´"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‚µËı¤/
+F
+java:S1148Ó"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‚µËı¤/
+F
+java:S1148ı"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‚µËı¤/
+F
+java:S1148†"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‚µËı¤/
+F
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‚µËı¤/
+F
+java:S1148¹"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‚µËı¤/
+ƒ
+java:S4144°"`Update this method so that its implementation is not identical to "updateGameState" on line 166.(Å³÷øûÿÿÿÿ8‚µËı¤/
+ƒ
+java:S4144Ï"`Update this method so that its implementation is not identical to "updateGameState" on line 166.(‘ßÑ‘ÿÿÿÿÿ8‚µËı¤/
+~
+java:S4144ù"`Update this method so that its implementation is not identical to "updateGameState" on line 166.(°ªÁı8‚µËı¤/
+~
+java:S4144‚"`Update this method so that its implementation is not identical to "updateGameState" on line 166.(¯Éú8‚µËı¤/
+~
+java:S4144‹"`Update this method so that its implementation is not identical to "updateGameState" on line 166.(ËªñŞ8‚µËı¤/
+P
+java:S1172‹"2Remove this unused method parameter "commandJSON".(—Â¬¦8‚µËı¤/
+P
+java:S1172•"2Remove this unused method parameter "commandJSON".(½î¯³8‚µËı¤/
+d
+java:S2142™"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8‚µËı¤/
+d
+java:S2142©"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8‚µËı¤/
+d
+java:S2142³"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8‚µËı¤/
+d
+java:S2142Ò"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8‚µËı¤/
+P
+java:S1172ß"2Remove this unused method parameter "commandJSON".(ãæ’Â8‚µËı¤/
+d
+java:S2142ü"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8‚µËı¤/
+d
+java:S2142…"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8‚µËı¤/
+d
+java:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8‚µËı¤/
+
+java:S1130´"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(Œ‡¹ƒúÿÿÿÿ8‚µËı¤/
+d
+java:S2142¸"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8‚µËı¤/
+Y	java:S125¼"<This block of commented-out lines of code should be removed.(¢îØ8‚µËı¤/
+V
+java:S1144°"3Remove this unused private "moveSpacecraft" method.(Å³÷øûÿÿÿÿ8‚µËı¤/
+Q
+java:S1144Ï".Remove this unused private "putBullet" method.(‘ßÑ‘ÿÿÿÿÿ8‚µËı¤/
+M
+java:S1144‚"/Remove this unused private "moverBalas" method.(¯Éú8‚µËı¤/
+O
+java:S1144‹"1Remove this unused private "moverEnemigo" method.(ËªñŞ8‚µËı¤/
