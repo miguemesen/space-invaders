@@ -8,22 +8,24 @@ void moveShip(int dir)
 
     if (dir == LEFT) {
 
-        if (ship->posX != WINDOW_MIN_WIDTH)
+        if (ship->posX >= WINDOW_MIN_WIDTH)
         {
 
             ship->posX -= SHIP_MOVE;
+            sendMovePlayerCommand(ship->posX, ship->posY);
         
         }
 
         
     }
 
-    if (dir == RIGHT) {
+    else if (dir == RIGHT) {
 
-        if (ship->posX != WINDOW_MAX_WIDTH) 
+        if (ship->posX <= WINDOW_MAX_WIDTH) 
         {
 
             ship->posX += SHIP_MOVE;
+            sendMovePlayerCommand(ship->posX, ship->posY);
 
 
 
@@ -31,7 +33,7 @@ void moveShip(int dir)
 
         
     }
-    sendMovePlayerCommand(ship->posX, ship->posY);
+    
 
 }
 

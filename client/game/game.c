@@ -125,8 +125,8 @@ void gameLoop(){
             moveSpacecraft();
             enemyFire();
             collisions();
-            sendUpdateGameStateCommand();
             hasWin();
+            sendUpdateGameStateCommand();
         }
 
 
@@ -259,6 +259,7 @@ void createEnemies()
             newEnemy->isActive = 0;
             newEnemy->type = NULL;
             newEnemy->id = id;
+            newEnemy->isDefaultEnemy = 0;
             newEnemy->dir = 1;
             newEnemy->texture = NULL;
 
@@ -296,7 +297,6 @@ void enemyFire()
         if (activeEnemies != NULL)
         {
             int size = cJSON_GetArraySize(activeEnemies);
-            printf("%d \n", size);
 
             if (cJSON_GetArraySize(activeEnemies) > 0)
             {
@@ -328,6 +328,7 @@ void hasWin()
     {
 
         setDefaultEnemyValues();
+        setBunkersDefaultValues();
         sendWinCommand();
     } 
 }
@@ -339,10 +340,8 @@ void gameOver(int defaultScore, int defaultLives)
 
     if(!isObserver)
     {
-
-        setBunkersDefaultValues();
         setDefaultEnemyValues();
-    
+        setBunkersDefaultValues();
     }
   
 

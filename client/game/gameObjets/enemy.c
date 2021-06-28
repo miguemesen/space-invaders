@@ -33,7 +33,7 @@ void checkBoundaries()
         checkBoundariesAux(RIGHT);
     }
 
-    if (enemyMatrix[0][8]->posX == WINDOW_MAX_WIDTH)
+    if (enemyMatrix[0][9]->posX == WINDOW_MAX_WIDTH)
     {
         checkBoundariesAux(LEFT);
     }
@@ -78,8 +78,6 @@ void updateEnemiesPosition(cJSON* enemies)
         temp += 10;
     }
 
-    printf("----------------------------------- \n");
-
 }
 
 
@@ -99,6 +97,7 @@ void putEnemy(cJSON* enemies)
         setEnemyTexture(enemyType, enemy);
         enemy->type = enemyType;
         enemy->isActive = 1;
+        enemy->isDefaultEnemy = 1;
     }
 
 }
@@ -138,6 +137,7 @@ void deleteEnemy(cJSON* enemies)
         Enemy* currentEnemy = getEnemyByID(id);
 
         currentEnemy->isActive = 0;
+        currentEnemy->isDefaultEnemy = 0;
     
     }
 
@@ -210,11 +210,15 @@ void setDefaultEnemyValues()
         for(int column=0; column < COLUMNS_ENEMY_MATRIX; column++)
         {
             posX += 60;
-
             Enemy* enemy = enemyMatrix[row][column];
+
+            if (enemy->isDefaultEnemy)
+            {
+                enemy->isActive = 1;
+
+            }
             enemy->posX = posX;
             enemy->posY = posY;
-            enemy->isActive = 1;
             enemy->dir = 1;
     
     
@@ -267,8 +271,6 @@ cJSON* getActiveEnemies()
 
             if (currentEnemy->isActive)
             {
-
-                printf("ENTRAAA \n");
                 cJSON *root = cJSON_CreateObject();
                 cJSON_AddNumberToObject(root, "posX", currentEnemy->posX);
                 cJSON_AddNumberToObject(root, "posY", currentEnemy->posY);

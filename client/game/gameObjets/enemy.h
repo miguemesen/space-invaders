@@ -20,6 +20,7 @@ typedef struct Enemy
     int posY;
     int id;
     int isActive; 
+    int isDefaultEnemy;
     char* type;
     int dir;
     SDL_Texture *texture;
