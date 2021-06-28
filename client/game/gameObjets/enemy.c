@@ -68,8 +68,9 @@ void updateEnemiesPosition(cJSON* enemies)
             currentEnemy->isActive = cJSON_GetObjectItem(enemy, "isActive")->valueint;
             char* enemyType = cJSON_GetObjectItem(enemy, "type")->valuestring;
 
-            if(currentEnemy->type == NULL && enemyType != NULL)
+            if(currentEnemy->texture == NULL && enemyType != TEXTURE_NULL)
             {
+                currentEnemy->type = enemyType;
                 setEnemyTexture(enemyType, currentEnemy);
             }
         
@@ -106,19 +107,23 @@ void putEnemy(cJSON* enemies)
 
 void setEnemyTexture(char* enemyType, Enemy* enemy)
 {
+    
     if (strcmp(enemyType, "crab") == 0)
-        {
-            enemy->texture = loadTexture(CRAB_SPRITE_PATH);
-        }
+    {
+        printf("LOAD TEXTURE \n");
+        enemy->texture = loadTexture(CRAB_SPRITE_PATH);
+    }
 
-        else if (strcmp(enemyType, "octo") == 0)
-        {
-            enemy->texture = loadTexture(OCTO_SPRITE_PATH);
-        }
-        else if (strcmp(enemyType, "squid") == 0)
-        {
-            enemy->texture = loadTexture(SQUID_SPRITE_PATH);
-        }
+    else if (strcmp(enemyType, "octo") == 0)
+    {
+        printf("LOAD TEXTURE \n");
+        enemy->texture = loadTexture(OCTO_SPRITE_PATH);
+    }
+    else if (strcmp(enemyType, "squid") == 0)
+    {
+        printf("LOAD TEXTURE \n");
+        enemy->texture = loadTexture(SQUID_SPRITE_PATH);
+    }
 
 }
 

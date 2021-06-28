@@ -50,6 +50,9 @@ void menu()
         }
 
     }
+    else {
+        menu();
+    }
 }
 
 
